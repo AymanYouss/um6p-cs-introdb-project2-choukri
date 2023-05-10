@@ -44,7 +44,7 @@ CREATE TABLE Sales_Transaction (
     incoterm VARCHAR(255),
     total_volume INTEGER,
     invoice REAL,
-    userComment VARCHAR(255),
+    userComment TEXT,
     estimated_fob REAL,
     real_fob REAL,
     tdate DATE,
@@ -87,11 +87,11 @@ CREATE TABLE Delivery (
     shipped_via VARCHAR(255),
     shipping_line VARCHAR(255),
     port_loading VARCHAR(255),
-    Transporter VARCHAR(255),
-    jours_half INTEGER,
-    jours_1 INTEGER,
-    jours_2 INTEGER,
-    jours_3 INTEGER
+    transporter VARCHAR(255),
+    jours_half REAL,
+    jours_1 REAL,
+    jours_2 REAL,
+    jours_3 REAL
 );
 
 CREATE TABLE Bill_of_Loading (
