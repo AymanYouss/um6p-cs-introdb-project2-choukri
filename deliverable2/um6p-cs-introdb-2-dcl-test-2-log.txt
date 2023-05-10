@@ -1,0 +1,5 @@
+mysql> USE phosphatefeeds;
+Database changed
+mysql> tee um6p-cs-introdb-2-dcl-test-2-log.txt
+mysql> SELECT ST.od FROM Sales_Transaction ST WHERE ST.payment_terms = 'CAD' LIMIT 7;
+Empty set (0.00 sec)

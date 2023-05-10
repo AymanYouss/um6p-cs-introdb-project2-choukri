@@ -47,7 +47,7 @@ ORDER BY stuffing_date;
  
 #number of orders per customer
 SELECT DISTINCT BL.cid , COUNT(DISTINCT BL.sid) as order_count
-FROM customers C
+FROM customer C
 INNER JOIN Bill_of_Loading BL
 ON C.cid = BL.cid
 GROUP BY BL.cid
@@ -80,13 +80,13 @@ WHERE Fulfills.od= 100 AND Customer.customer_group='CP Group' ;
 #insertion
 
 INSERT INTO Shipment (sid, net_quantity, days_of_storage, days_of_storage2,days_of_storage3, pallets, inspection, loading_date_at_plant, quantity_removed_from_the_site, stuffing_date, sequence_date, storage_cost, storage_cost2, storage_cost3)
-VALUES (1004,1200, 2, 0, 0,'1 pallet per BB', 'Inspectorate','5-9-2023',110,'5-20-2023','5-11-2023',84.91, 66,100);
+VALUES (28911,1200, 2, 0, 0,'1 pallet per BB', 'Inspectorate','5-9-2023',110,'5-20-2023','5-11-2023',84.91, 66,100);
 
-INSERT INTO Sales_transaction (od,freight_invoice, freight_invoice2, freight_invoice3,sales_order, payment_terms, clearance_date,payment_terms_days,incoterm,total_volume,invoice,comment,estimated_fob,payment_status)
+INSERT INTO Sales_transaction (od,freight_invoice, freight_invoice2, freight_invoice3,sales_order, payment_terms, clearance_date,payment_terms_days,incoterm,total_volume,invoice,userComment,estimated_fob,payment_status)
 VALUES (105,120, 20.7, 78.4, 1772,'Cable bank transfer', '12-25-2022',15,'CIF',4400,9000,37, 66,'Not paid');
 -- ------------------------------------------------------
 
 #Deletion
 
-DELETE FROM Delivery WHERE status = 'Finalized';
+DELETE FROM Delivery WHERE status1 = 'Finalized';
 DELETE FROM Sales_Transaction WHERE YEAR(tdate) <= 2015;

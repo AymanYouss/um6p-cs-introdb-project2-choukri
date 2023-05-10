@@ -1,3 +1,5 @@
+USE phosphatefeeds;
+
 DROP USER IF EXISTS 'sales'@'localhost';
 DROP ROLE IF EXISTS 'sales';
 DROP USER IF EXISTS 'logistics'@'localhost';
@@ -14,6 +16,7 @@ CREATE ROLE 'logistics';
 GRANT 'logistics' TO 'logistics'@'localhost';
 SET DEFAULT ROLE 'logistics' TO 'logistics'@'localhost';
 
+/*
 SYSTEM mysql -u sales;
 SELECT CURRENT_ROLE();
 SHOW databases;
@@ -25,6 +28,7 @@ SHOW databases;
 SYSTEM mysql -u root;
 USE phosphatefeeds;
 
+*/
 /*The command below allows for both roles to be able to select from every table in the database*/
 GRANT SELECT ON * TO sales, logistics;
 
@@ -41,11 +45,16 @@ GRANT SELECT (customer_name, customer_group), INSERT (customer_name, customer_gr
 GRANT SELECT (contract_id, contract_status), INSERT (contract_id, contract_status), UPDATE (contract_id, contract_status) ON customer TO logistics;
 
 /*The following command allows us to demonstrate the privileges that the logistics role has*/
+
+/*
 SYSTEM mysql -u logistics;
 USE phosphatefeeds;
 SELECT S.sid FROM Shipment S WHERE S.stuffing_date='2022-08-29' LIMIT 7;
 
-/*The following command allows us to demonstrate the privileges that the sales role has*/
+-- The following command allows us to demonstrate the privileges that the sales role has
 SYSTEM mysql -u sales;
 USE phosphatefeeds;
 SELECT ST.od FROM Sales_Transaction ST WHERE ST.payment_terms = 'CAD' LIMIT 7;
+
+SYSTEM mysql -u root;
+*/

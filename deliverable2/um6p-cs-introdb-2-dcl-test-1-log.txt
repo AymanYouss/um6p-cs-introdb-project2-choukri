@@ -1,0 +1,16 @@
+mysql> USE phosphatefeeds;
+Database changed
+mysql> SELECT S.sid FROM Shipment S WHERE S.stuffing_date='2022-08-29' LIMIT 7;
++-----+
+| sid |
++-----+
+|  17 |
+|  19 |
+|  25 |
+|  30 |
+|  32 |
+|  39 |
+|  44 |
++-----+
+7 rows in set (0.00 sec)
+
