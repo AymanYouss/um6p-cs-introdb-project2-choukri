@@ -167,7 +167,31 @@ CREATE INDEX product_name ON product(category(4),bag_size(2),percentage);
 CREATE INDEX delivery_ports ON delivery(port_loading(10),discharging_port(10));
 
 
+DELIMITER $$
+CREATE TRIGGER check_shipment_qty
+BEFORE INSERT ON Shipment
+FOR EACH ROW
+BEGIN
+    IF NEW.net_quantity <= 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Cannot add shipment with non-positive net quantity.';
+    END IF;
+END;
+$$
+DELIMITER ;
 
+DELIMITER $$
+CREATE TRIGGER check_sales_transaction_payment_status
+BEFORE INSERT ON Sales_Transaction
+FOR EACH ROW
+BEGIN
+    IF NEW.Payment_status != 'Paid' THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Cannot add a sales transaction unless it is paid.';
+    END IF;
+END;
+$$
+DELIMITER ;
 
 
 
