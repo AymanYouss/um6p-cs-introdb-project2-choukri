@@ -42,7 +42,7 @@
    $userModel = new User($conn);
    //$tableName = "Sales_Transaction";
   // print_r();
-    $fetchData = $userModel->selectTable();
+    $fetchData = $userModel->selectSales();
     if(is_array($fetchData)){      
       foreach($fetchData as $data){
     ?>
