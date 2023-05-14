@@ -1,6 +1,6 @@
 <?php
 
-$db_name='todo';
+$db_name='phosphatefeeds';
 $password="";
 $user="root";
 $host="localhost";

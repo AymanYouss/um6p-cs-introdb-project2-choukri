@@ -30,6 +30,24 @@
         return $this->login($email, $password);
     }
 
+    public function selectSales(){
+        $query = $this->connection->prepare("SELECT * FROM sales_transaction LIMIT 5");
+        
+        $query->execute([
+        
+        ]);
+        return $query->fetchAll() ;
+    }
+
+    public function selectAll(){
+        $query = $this->connection->prepare("SELECT * FROM shipment NATURAL JOIN is_loaded NATURAL JOIN delivery NATURAL JOIN fulfills NATURAL JOIN sales_transaction NATURAL JOIN contains   LIMIT 5");
+        
+        $query->execute([
+        
+        ]);
+        return $query->fetchAll() ;
+    }
+
     //if adding a functionality, public function etc..
     
 }

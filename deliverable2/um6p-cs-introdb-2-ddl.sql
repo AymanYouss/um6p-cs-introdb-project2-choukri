@@ -180,18 +180,7 @@ END;
 $$
 DELIMITER ;
 
-DELIMITER $$
-CREATE TRIGGER check_sales_transaction_payment_status
-BEFORE INSERT ON Sales_Transaction
-FOR EACH ROW
-BEGIN
-    IF NEW.Payment_status != 'Paid' THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Cannot add a sales transaction unless it is paid.';
-    END IF;
-END;
-$$
-DELIMITER ;
+
 
 
 
