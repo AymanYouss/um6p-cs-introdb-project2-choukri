@@ -36,7 +36,7 @@
         $query->execute([
         
         ]);
-        return $query->fetchAll() ;
+        return $query->fetch(PDO::FETCH_ASSOC) ;
     }
 
     public function selectAll(){

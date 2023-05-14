@@ -17,32 +17,38 @@
     <div class="table-responsive">
       <table class="table table-bordered">
        <thead>
-        <th>Outbound delivery</th>
-         <th>Freight Invoice 1</th>
-         <th>Freight Invoice 2</th>
-         <th>Freight Invoice 3</th>
-         <th>Sales order</th>
-         <th>Payment terms</th>
-         <th>Clearance Date</th>
-         <th>Payment terms days</th>
-         <th>Incoterm</th>
-         <th>Total Volume</th>
-         <th>Invoice</th>
-         <th>UserComment</th>
-         <th>Estimated FOB</th>
-         <th>Real FOB</th>
-         <th>Transaction Date</th>
-         <th>Payment Status</th>
-    </thead>
-    <tbody>
-    <?php
-    //Create new user (just for testing , the user will be in the session array)
+        <?php 
+        //Create new user (just for testing , the user will be in the session array)
     require '../dbconfig.php';
     require '../models/User.php';
    $userModel = new User($conn);
    //$tableName = "Sales_Transaction";
-  // print_r();
-    print_r($fetchData = $userModel->selectAll());
+   
+    $fetchData = $userModel->selectAll();
+
+        foreach($fetchData[0] as $colname => $val){
+          if (!is_numeric($colname)){
+            echo "<th>$colname</th>";
+          }
+          
+        }
+        ?>
+        
+    </thead>
+    <tbody>
+    <?php
+    foreach($fetchData as $row){
+      echo "<tr>";
+      $counter = 0;
+      foreach($row as $entry){
+        if ($counter%2 == 0){
+          echo "<td>$entry</td>";
+          
+        }
+        $counter++;
+      }
+      echo "<tr>";
+    }
     ?>
    </div>
  
