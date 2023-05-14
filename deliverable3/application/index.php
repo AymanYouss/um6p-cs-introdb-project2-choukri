@@ -2,7 +2,7 @@
 <?php
 if(!isset($_SESSION['user_id']))
 {
-    header('Location: /src/views/Login.php');
+    header('Location: /src/views/loginform.php');
 }
 else
 {
