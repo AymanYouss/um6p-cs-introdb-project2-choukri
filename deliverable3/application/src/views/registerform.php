@@ -14,24 +14,24 @@
   <link rel="stylesheet" href="../../assets/loginstyle.css">
 </head>
 <body>
-<form action="../controllers/RegistrationController.php">
+<form action="../controllers/RegistrationController.php" method="post">
   <!-- Email input -->
   <div class="form-outline mb-4">
   <label class="form-label" for="form2Example1">Email address</label>  
-  <input type="email" id="form2Example1" class="form-control" required/>
+  <input name="email" type="email" id="form2Example1" class="form-control" required/>
     
   </div>
 
   <div class="form-outline mb-4">
   <label class="form-label" for="form2Example2">Username</label>  
-  <input type="text" id="form2Example2" class="form-control" required/>
+  <input name="username" type="text" id="form2Example2" class="form-control" required/>
     
   </div>
 
   <!-- Password input -->
   <div class="form-outline mb-4">
   <label class="form-label" for="form2Example3">Password</label>  
-  <input type="password" id="form2Example3" class="form-control" required/>
+  <input name="password" type="password" id="form2Example3" class="form-control" required/>
     
   </div>
 

@@ -29,20 +29,20 @@ class LoginController
 }
 
 
-// $user= new User($conn);
-// $loginController = new LoginController($user);
-// if(isset($_POST['email']))
-// {
-//     $loginController->login();
-// }
-// else
-// {
-//     if(isset($_GET['logout']))
-//     {
-//         session_destroy();
-//         header('Location: /src/views/Login.php');
-//     }
-// }
+$user= new User($conn);
+$loginController = new LoginController($user);
+if(isset($_POST['email']))
+{
+    $loginController->login();
+}
+else
+{
+    if(isset($_GET['logout']))
+    {
+        session_destroy();
+        header('Location: ../views/loginform.php');
+    }
+}
 
 
 
