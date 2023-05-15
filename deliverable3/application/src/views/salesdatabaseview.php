@@ -62,12 +62,12 @@
       <td><?php echo $data['estimated_fob']??''; ?></td> 
       <td><?php echo $data['real_fob']??''; ?></td>
       <td><?php echo $data['tdate']??''; ?></td>  
-      <td><?php echo $data['Payment_status']??''; ?></td>     
+      <td><?php echo $data['payment_status']??''; ?></td>     
      </tr>
      <?php
       }}else{ ?>
       <tr>
-        <td colspan="16">
+        <td colspan="17">
     <?php echo $fetchData; ?>
   </td>
     <tr>
