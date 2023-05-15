@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="../../assets/loginstyle.css">
 </head>
 <body>
-<form>
+<form action="../controllers/LoginController.php">
   <!-- Email input -->
   <div class="form-outline mb-4">
   <label class="form-label" for="form2Example1">Email address</label>  
