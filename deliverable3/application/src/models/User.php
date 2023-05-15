@@ -36,11 +36,11 @@
         $query->execute([
         
         ]);
-        return $query->fetch(PDO::FETCH_ASSOC) ;
+        return $query->fetchAll() ;
     }
 
     public function selectAll(){
-        $query = $this->connection->prepare("SELECT * FROM shipment NATURAL JOIN is_loaded NATURAL JOIN delivery NATURAL JOIN fulfills NATURAL JOIN sales_transaction NATURAL JOIN contains_product NATURAL JOIN product   LIMIT 5");
+        $query = $this->connection->prepare("SELECT * FROM shipment NATURAL JOIN is_loaded NATURAL JOIN delivery NATURAL JOIN fulfills NATURAL JOIN sales_transaction NATURAL JOIN contains_product NATURAL JOIN product LIMIT 5");
         
         $query->execute([
         

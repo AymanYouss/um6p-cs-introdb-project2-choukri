@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales dashboard</title>
-    <link rel="stylesheet" href="../../assets/salesdashboard.css">
+    <link rel="stylesheet" href="../../assets/salesdashboardstyle.css">
 </head>
 <body>
     <a class="seesales" href="salesdatabaseview.php">See Sales Database</a>
