@@ -18,7 +18,7 @@
   <!-- Email input -->
   <div class="form-outline mb-4">
   <label class="form-label" for="form2Example1">Email address</label>  
-  <input type="email" id="form2Example1" class="form-control" />
+  <input type="email" id="form2Example1" class="form-control" required/>
     
   </div>
 
@@ -39,9 +39,10 @@
   </div>
 
   <!-- Submit button -->
-  <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+  <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
 
   <!-- Register buttons -->
+  <br>
   <div class="text-center">
     <p>Not a member? <a href="registerform.php">Register</a></p>
   </div>
