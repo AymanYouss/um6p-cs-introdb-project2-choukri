@@ -35,7 +35,7 @@ CREATE TABLE temporary_full_table (
     -- ca fob
     -- ca cfr
     sales_order INTEGER,
-    od INTEGER ,
+    od INTEGER PRIMARY KEY,
     supplier VARCHAR(255),
     transporter VARCHAR(255),
     inspection VARCHAR(255),
