@@ -35,7 +35,7 @@ CREATE TABLE temporary_full_table (
     -- ca fob
     -- ca cfr
     sales_order INTEGER,
-    od INTEGER PRIMARY KEY,
+    od INTEGER ,
     supplier VARCHAR(255),
     transporter VARCHAR(255),
     inspection VARCHAR(255),
@@ -97,3 +97,11 @@ CREATE TABLE user (
     email VARCHAR(255),
     urole VARCHAR(255)
 );
+
+
+LOAD DATA INFILE 'C:/wamp64/www/DBMS/um6p-cs-introdb-project2-choukri/deliverable3/data.csv' 
+INTO TABLE temporary_full_table 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
