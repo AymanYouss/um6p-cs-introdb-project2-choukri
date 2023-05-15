@@ -1,14 +1,13 @@
-
 <?php
 if(!isset($_SESSION['user_id']))
 {
-    header('Location: /src/views/loginform.php');
+    header('Location: ./src/views/loginform.php');
 }
 else
 {
-    require 'src/models/User.php';
-    require 'src/controllers/LoginController.php';
-    require '/src/dbconfig.php';
+    require './src/models/User.php';
+    require './src/controllers/LoginController.php';
+    require './src/dbconfig.php';
     $userModel = new User($conn);
     $loginController = new LoginController($userModel);
     try{
