@@ -19,10 +19,10 @@ class LoginController
         {
             echo $e->getMessage();
         }
-        if (isset($_SESSION["user"])) {
+        if ($user) {
             header("location: ../views/Dashboard.php");
         } else {
-            echo "Wrong username or password";
+            header("location: ../views/loginform.php?error=1");
         }
     }
 

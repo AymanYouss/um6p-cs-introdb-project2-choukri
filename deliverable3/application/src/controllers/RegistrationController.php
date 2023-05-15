@@ -14,7 +14,7 @@ class RegistrationController
     public function register()
     {
         try{
-            $user = $this->userModel->register($_POST['email'], $_POST['username'], $_POST['password']);
+            $user = $this->userModel->register($_POST['email'], $_POST['username'], $_POST['password'], $_POST['role']);
         }
         catch(Exception $e)
         {
@@ -22,20 +22,20 @@ class RegistrationController
         }
         if ($user) {
             $_SESSION['user'] = $user;
-            header("Location: /src/views/Dashboard.php");
+            header("Location: ../views/Dashboard.php");
         } else{
-            header("Location: /src/views/loginform.php");
+            header("Location: ../src/views/loginform.php");
         }
     }
 }
 
 
-// $user= new User($conn);
-// $regController = new RegistrationController($user);
-// if(isset($_POST['email']))
-// {
-//     $regController->register();
-// }
+$user= new User($conn);
+$regController = new RegistrationController($user);
+if(isset($_POST['email']))
+{
+    $regController->register();
+}
 
 
 

@@ -88,9 +88,9 @@ CREATE TABLE temporary_full_table (
 );
 
 
-DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS user_credentials;
 
-CREATE TABLE user (
+CREATE TABLE user_credentials (
     userid INTEGER AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(255),
     upassword VARCHAR(255),
