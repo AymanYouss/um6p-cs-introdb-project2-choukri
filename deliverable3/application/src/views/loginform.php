@@ -47,6 +47,19 @@
     <p>Not a member? <a href="registerform.php">Register</a></p>
   </div>
 </form>
+
+<div class="text-center">
+<?php
+
+if (isset($_GET['error'])) {
+  echo "<p>Invalid username or password</p>";
+}
+
+?>
+</div>
+
+
+
 </body>
 </html>
 

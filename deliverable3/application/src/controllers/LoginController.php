@@ -13,20 +13,16 @@ class LoginController
     {
         try
         {
-            echo 1;
             $user=$this->userModel->login($_POST['email'], $_POST['password']);
         }
         catch(Exception $e)
         {
-            echo 2;
             echo $e->getMessage();
         }
-        if (isset($_SESSION["user"])) {
-            echo 3;
+        if ($user) {
             header("location: ../views/Dashboard.php");
         } else {
-            echo 4;
-            echo "Wrong username or password";
+            header("location: ../views/loginform.php?error=1");
         }
     }
 

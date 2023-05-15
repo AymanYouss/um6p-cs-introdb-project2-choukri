@@ -35,6 +35,19 @@
     
   </div>
 
+  <!-- Role dropdown menu -->
+  <div class="form-group">
+  <label for="form2Example3">Role</label>
+  <select class="form-control" id="form2Example3" name="role" required>
+    <option selected disabled value="">Choose a role</option>
+    <option value="sales">Sales</option>
+    <option value="logistics">Logistics</option>
+    <option value="adv">Adv</option>
+    <option value="admin">Admin</option>
+  </select>
+  </div>
+
+
   <!-- 2 column grid layout for inline styling -->
   <div class="row mb-4">
     <div class="col d-flex justify-content-center">
