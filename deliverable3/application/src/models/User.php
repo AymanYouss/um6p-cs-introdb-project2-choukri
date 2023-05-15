@@ -6,16 +6,20 @@
         $this->connection=$conn;
     }
     public function login($email, $password) {
-        $query = $this->connection->prepare("SELECT * FROM user WHERE email = :email");
+        echo 5;
+        $query = $this->connection->prepare("SELECT * FROM user_credentials WHERE email = :email");
+        echo 6;
         $query->execute([
             "email" => $email,
         ]);
+        echo 7;
         $user = $query->fetch();
         if ($user && password_verify($password, $user["password"])) {
             //pass arguments to session in user variable
+            echo 8;
             $_SESSION["user"]=$user;
         }
-        else {
+        else {echo 9;
             return false;
         }
     }
