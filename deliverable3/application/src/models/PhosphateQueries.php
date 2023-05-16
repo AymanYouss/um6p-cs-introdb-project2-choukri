@@ -9,7 +9,7 @@ class PhosphateQueries
     {
         $this->connection=$conn;
     }
-}
+
 
     public function getQuarter($date)
     {
@@ -194,7 +194,6 @@ public function getPaymentDeadline($bldate, $payment_terms_days)
     }
 
 
-
-
+}
 
 ?>
