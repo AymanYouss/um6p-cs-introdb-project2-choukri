@@ -36,7 +36,7 @@ class LoginController
             }
             
         } else {
-            header("location: ../views/loginform.php?error=1");
+            header("location: ../views/login_page.php?error=1");
         }
     }
 
