@@ -12,8 +12,8 @@
   <div class="container">
     <a class="seesales" href="salesdatabaseview.php">See Sales Database</a>
     <a class="seefull" href="fulldatabaseview.php">See Full Database</a>
-    <a class="modify" href="#">Modify rows</a>
-    <a class="add" href="#">Add row</a>
+    <a class="modify" href="editrowssales.php">Modify rows</a>
+    <a class="add" href="addrowsales.php">Add row</a>
   </div>
 </body>
 </html>
