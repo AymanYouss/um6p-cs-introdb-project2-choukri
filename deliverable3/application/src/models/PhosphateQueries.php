@@ -9,7 +9,7 @@ class PhosphateQueries
     {
         $this->connection=$conn;
     }
-}
+
 
     public function getQuarter($date)
     {
@@ -33,7 +33,7 @@ class PhosphateQueries
 
 public function getTransactionYear($date)
 {
-    $query = "SELECT YEAR($date) AS year FROM sales_transaction";
+    $query = "SELECT YEAR($date) AS year FROM sales_transaction ";
     $result = $this->connection->query($query);
 
     if ($result && $result->num_rows > 0) {
@@ -172,16 +172,8 @@ public function getBlQuarter($bldate)
 
 public function getInvoicedAmount($net_quantity, $total_volume)
 {
-    $result = $net_quantity * $total_volume;
-    
-    if ($result && $result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $invoiced_amount = $row['invoiced_amount'];
-        $result->free_result();
-        return $invoiced_amount;
-    } else {
-        return null; 
-    }
+    return $net_quantity * $total_volume;
+
 }
 
 public function getPaymentDeadline($bldate, $payment_terms_days)
@@ -192,9 +184,40 @@ public function getPaymentDeadline($bldate, $payment_terms_days)
         
         return $payment_deadline;
     }
+    
+
+    
+    public function getEstimatedInsurance($incoterm){
+        if ($incoterm == "CIF"){
+            return 2;
+        }
+        else{
+            return 0;
+        }
+    }
+    public function getCA_EXW($price_EXW,$net_quantity){
+        return $price_EXW * $net_quantity;
+    }
+    public function getCA_CFR($net_quantity,$price){
+        return $net_quantity*$price;
+        
+    }
+    public function getEta($transit_time,$bldate){
+        $numer = (string) $transit_time;
+        return date('Y-m-d', strtotime($bldate. ' + '.$numer.' days'));
+        
+    }
+    public function getMoisFacturation($clearance_date){
+        
+        $month = date('F', strtotime($clearance_date));
+        $year = date('Y', strtotime($clearance_date));
+        return $month.' '.$year;
+  
+        
+    }
 
 
-
+}
 
 
 ?>
