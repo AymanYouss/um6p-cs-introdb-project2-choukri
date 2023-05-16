@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>AppGrids - Bootstrap 5 App Landing Page Template</title>
+    <title>Sales Dashboard</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon.svg"/>
@@ -94,8 +94,8 @@
                 Add, modify, delete rows and entries in the sales table.
               </p>
               <div class="hero-btns">
-								<a href="https://rebrand.ly/appgrids-gg/" class="main-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Database Overview</a>
-								<a href="https://rebrand.ly/appgrids-gg/" class="main-btn border-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Edit a Sale</a>
+								<a href="fulldatabaseview.php" class="main-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Database Overview</a>
+								<a href="#feature" class="main-btn border-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Edit a Sale</a>
 							</div>
             </div>
 					</div>
@@ -127,7 +127,7 @@
 					<div class="col-lg-4 col-md-8 col-sm-10">
 						<div class="single-feature">
 							<div class="icon color-1">
-								<a style="color:white" href="salesdatabaseview.php"><i class="lni lni-pointer-up"></i></a> 
+								<a style="color:white" href="addrowsales.php"><i class="lni lni-pointer-up"></i></a> 
 							</div>
 							<div class="content">
 								<h3>Add a row</h3>
@@ -149,7 +149,7 @@
 					<div class="col-lg-4 col-md-8 col-sm-10">
 						<div class="single-feature">
 							<div class="icon color-3">
-              <a style="color:white" href="addrowsales.php"><i class="lni lni-database"></i></a> 
+              <a style="color:white" href="salesdatabaseview.php"><i class="lni lni-database"></i></a> 
 							</div>
 							<div class="content">
 								<h3>Take a look</h3>
