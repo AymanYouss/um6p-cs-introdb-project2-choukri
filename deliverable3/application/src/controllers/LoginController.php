@@ -20,7 +20,21 @@ class LoginController
             echo $e->getMessage();
         }
         if ($user) {
-            header("location: ../views/Dashboard.php");
+            switch ($_SESSION["role"]) {
+                case 'admin':
+                    header("location: ../views/AdminDashboard.php");
+                    break;
+                case 'sales':
+                    header("location: ../views/SalesDashboard.php");
+                    break;
+                case 'logistics':
+                    header("location: ../views/LogisticsDashboard.php");
+                    break;
+                case 'adv':
+                    header("location: ../views/AdvDashboard.php");
+                    break;
+            }
+            
         } else {
             header("location: ../views/loginform.php?error=1");
         }
