@@ -21,19 +21,19 @@
         }
     }
     public function register($email, $username, $password, $role) {
-        $query = $this->connection->prepare("INSERT INTO user_credentials (username, upassword, email, urole) VALUES (:username, :password, :email, :role)");
+        $query = $this->connection->prepare("INSERT INTO user_credentials (username, upassword, email, urole) VALUES (:username, :upassword, :email, :urole)");
         $password_hashed = password_hash($password, PASSWORD_DEFAULT);
         $query->execute([
             "email" => $email,
             "username" => $username,
-            "password" => $password_hashed,
-            "role" => $role
+            "upassword" => $password_hashed,
+            "urole" => $role
         ]);
         return $this->login($email, $password);
     }
 
     public function selectSales(){
-        $query = $this->connection->prepare("SELECT * FROM sales_transaction LIMIT 5");
+        $query = $this->connection->prepare("SELECT t.od, t.freight_invoice, t.freight_invoice2, t.freight_invoice3, t.sales_order, t.payment_terms, t.clearance_date, t.payment_terms_days, t.incoterm, t.total_volume, t.invoice, t.userComment, t.estimated_fob, t.real_fob, t.tdate, t.payment_status FROM temporary_full_table AS t LIMIT 5");
         
         $query->execute([
         
@@ -42,13 +42,15 @@
     }
 
     public function selectAll(){
-        $query = $this->connection->prepare("SELECT * FROM shipment NATURAL JOIN is_loaded NATURAL JOIN delivery NATURAL JOIN fulfills NATURAL JOIN sales_transaction NATURAL JOIN contains_product NATURAL JOIN product");
+        $query = $this->connection->prepare("SELECT * FROM temporary_full_table LIMIT 5");
         
         $query->execute([
         
         ]);
         return $query->fetchAll() ;
     }
+
+    
 
     //if adding a functionality, public function etc..
     

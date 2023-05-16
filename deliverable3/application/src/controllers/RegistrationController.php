@@ -22,9 +22,9 @@ class RegistrationController
         }
         if ($user) {
             $_SESSION['user'] = $user;
-            header("Location: ../views/Dashboard.php");
+            header("Location: ../views/SalesDashboard.php");
         } else{
-            header("Location: ../src/views/loginform.php");
+            header("Location: ../views/loginform.php");
         }
     }
 }
