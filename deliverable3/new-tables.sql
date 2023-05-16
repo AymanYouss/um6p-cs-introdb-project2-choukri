@@ -99,7 +99,7 @@ CREATE TABLE user_credentials (
 );
 
 
-LOAD DATA INFILE 'C:/wamp64/www/DBMS/um6p-cs-introdb-project2-choukri/deliverable3/data.csv' 
+LOAD DATA INFILE './data.csv' 
 INTO TABLE temporary_full_table 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'

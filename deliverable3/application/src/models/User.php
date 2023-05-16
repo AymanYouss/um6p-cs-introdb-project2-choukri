@@ -14,6 +14,7 @@
         if ($user && password_verify($password, $user["upassword"])) {
             //pass arguments to session in user variable
             $_SESSION["user"]=$user;
+            $_SESSION["role"]=$user["urole"];
             return true;
         }
         else {
