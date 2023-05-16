@@ -34,10 +34,19 @@
     }
 
     public function selectSales(){
-        $query = $this->connection->prepare("SELECT t.od, t.freight_invoice, t.freight_invoice2, t.freight_invoice3, t.sales_order, t.payment_terms, t.clearance_date, t.payment_terms_days, t.incoterm, t.total_volume, t.invoice, t.userComment, t.estimated_fob, t.real_fob, t.tdate, t.payment_status FROM temporary_full_table AS t LIMIT 5");
+        $query = $this->connection->prepare("SELECT t.od, t.freight_invoice, t.freight_invoice2, t.freight_invoice3, t.sales_order, t.payment_terms, t.clearance_date, t.payment_terms_days, t.incoterm, t.total_volume, t.invoice, t.userComment, t.estimated_fob, t.real_fob, t.tdate, t.payment_status FROM temporary_full_table AS t");
         
         $query->execute([
         
+        ]);
+        return $query->fetchAll() ;
+    }
+
+    public function selectSalesOd($od){
+        $query = $this->connection->prepare("SELECT t.od, t.freight_invoice, t.freight_invoice2, t.freight_invoice3, t.sales_order, t.payment_terms, t.clearance_date, t.payment_terms_days, t.incoterm, t.total_volume, t.invoice, t.userComment, t.estimated_fob, t.real_fob, t.tdate, t.payment_status FROM temporary_full_table AS t WHERE od = $od");
+        
+        $query->execute([
+            
         ]);
         return $query->fetchAll() ;
     }
