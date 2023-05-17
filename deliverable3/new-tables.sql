@@ -21,7 +21,7 @@ CREATE TABLE temporary_full_table (
     -- number_of_tc
     incoterm VARCHAR(255),
     status1 VARCHAR(255),
-    Status2 VARCHAR(255),
+    status2 VARCHAR(255),
     payment_terms VARCHAR(255),
 	payment_terms_days INTEGER,
     price REAL,
@@ -99,7 +99,7 @@ CREATE TABLE user_credentials (
 );
 
 
-LOAD DATA INFILE 'C:/wamp64/www/um6p-cs-introdb-project2-choukri/deliverable3/data.csv' 
+LOAD DATA INFILE 'C:/wamp64/www/DBMS/um6p-cs-introdb-project2-choukri/deliverable3/data.csv' 
 INTO TABLE temporary_full_table 
 FIELDS TERMINATED BY ',' 
 ENCLOSED BY '"'

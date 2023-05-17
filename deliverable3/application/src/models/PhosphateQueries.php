@@ -31,86 +31,42 @@ class PhosphateQueries
     }
 
 
-public function getTransactionYear($date)
+public function getYear($date)
 {
-    $query = "SELECT YEAR($date) AS year FROM sales_transaction ";
-    $result = $this->connection->query($query);
 
-    if ($result && $result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $year = $row['year'];
-        $result->free_result();
-        return $year;
-    } else {
-        return null; 
-}
-}
+    $datetime = DateTime::createFromFormat('Y-m-d', $date);
+    $a = $datetime->format('y');
 
-public function calculateNumberOfTc()
-{
-    $query = "SELECT total_volume,volume_per_container  
-              FROM temporary_full_table ";
-    
-    $result = $this->connection->query($query);
-    
-    if ($result) {
-        $row = $result->fetch_assoc();
-        $total_volume = $row['total_volume'];
-        $volume_per_container = $row['volume_per_container'];
-
-        $number_of_tc = $total_volume / $volume_per_container;
-
-        $result->free_result();
-        return $number_of_tc;
-    } else {
-        return null; 
+    if ($a < 0){
+        return 0;
     }
+    return $datetime->format('y');
+   
 }
 
-public function getPriceExw()
+public function calculateNumberOfTc($total_volume,$volume_per_container)
+{
+    try{
+        $res =  $total_volume / $volume_per_container;
+    }
+    catch (DivisionByZeroError){
+        return 0;
+    }
+    return $res;
+    
+
+}
+
+public function getPriceExw($price , $estimated_freight , $estimated_fob , $estimated_insurance)
     {
-        $query = "SELECT price, estimated_freight, estimated_fob, estimated_insurance 
-                  FROM temporary_full_table ";
-        
-        $result = $this->connection->query($query);
-        
-        if ($result && $result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $price = $row['price'];
-            $estimated_freight = $row['estimated_freight'];
-            $estimated_fob = $row['estimated_fob'];
-            $estimated_insurance = $row['estimated_insurance'];
-            
-            $price_exw = $price - $estimated_freight - $estimated_fob - $estimated_insurance;
-            
-            $result->free_result();
-            return $price_exw;
-        } else {
-            return null; 
-        }
+        return $price - $estimated_freight - $estimated_fob - $estimated_insurance;
+         
     }
 
-    public function getPriceFOB()
+    public function getPriceFOB( $price , $estimated_freight, $estimated_insurance)
     {
-        $query = "SELECT price, estimated_freight, estimated_insurance 
-                  FROM temporary_full_table ";
-        
-        $result = $this->connection->query($query);
-        
-        if ($result && $result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $price = $row['price'];
-            $estimated_freight = $row['estimated_freight'];
-            $estimated_fob = $row['estimated_fob'];
-            $estimated_insurance = $row['estimated_insurance'];
-            
-            $price_fob = $price - $estimated_freight- $estimated_insurance;
-            
-            $result->free_result();
-            return $price_fob;
-        } else {
-            return null; 
-        }
+        return $price - $estimated_freight- $estimated_insurance;
+     
     }
 
 

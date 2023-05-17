@@ -18,56 +18,76 @@
       <table class="table table-bordered">
        <thead>
         <th>Outbound delivery</th>
-         <th>Freight Invoice 1</th>
-         <th>Freight Invoice 2</th>
-         <th>Freight Invoice 3</th>
-         <th>Sales order</th>
-         <th>Payment terms</th>
-         <th>Clearance Date</th>
-         <th>Payment terms days</th>
-         <th>Incoterm</th>
-         <th>Total Volume</th>
-         <th>Invoice</th>
-         <th>UserComment</th>
-         <th>Estimated FOB</th>
-         <th>Real FOB</th>
-         <th>Transaction Date</th>
-         <th>Payment Status</th>
+        <th>region</th>
+        <th>tdate</th>
+        <th>Quarter</th>
+        <th>Year</th>
+        <th>country</th>
+        <th>discharging_port</th>
+        <th>delivery_mode</th>
+        <th>customer_name</th>
+        <th>customer_group</th>
+        <th>category</th>
+        <th>pid</th>
+        <th>pallets</th>
+        <th>branding</th>
+        <th>total_volume</th>
+        <th>volume_per_container</th>
+        <th>Number of tc</th>
+        <th>incoterm</th>
+        <th>status1</th>
+        <th>status2</th>
+        <th>payment_terms</th>
+        <th>payment_terms_days</th>
+        <th>estimated_freight</th>
+        <th>estimated_fob</th>
     </thead>
     <tbody>
     <?php
     //Create new user (just for testing , the user will be in the session array)
     require '../dbconfig.php';
     require '../models/User.php';
+    require '../models/PhosphateQueries.php';
    $userModel = new User($conn);
+   $phosphateModel = new PhosphateQueries($conn);
    $tableName = 'sales_transaction';
-  // print_r();
-    $fetchData = $userModel->selectSales();
+  
+    $fetchData = $userModel->selectAll();
+    //var_dump($fetchData);
     if(is_array($fetchData)){      
       foreach($fetchData as $data){
     ?>
       <tr>
       <td><?php echo $data['od']??''; ?></td>
-      <td><?php echo $data['freight_invoice']??''; ?></td>
-      <td><?php echo $data['freight_invoice2']??''; ?></td>
-      <td><?php echo $data['freight_invoice3']??''; ?></td>
-      <td><?php echo $data['sales_order']??''; ?></td>
-      <td><?php echo $data['payment_terms']??''; ?></td>
-      <td><?php echo $data['clearance_date']??''; ?></td>
-      <td><?php echo $data['payment_terms_days']??''; ?></td>
-      <td><?php echo $data['incoterm']??''; ?></td>
-      <td><?php echo $data['total_volume']??''; ?></td>
-      <td><?php echo $data['invoice']??''; ?></td>
-      <td><?php echo $data['userComment']??''; ?></td> 
+      <td><?php echo $data['region']??''; ?></td>
+      <td><?php echo $data['tdate']??''; ?></td>
+      <td><?php echo $phosphateModel->getQuarter($data['tdate'])??''; ?></td>
+      <td><?php echo $phosphateModel->getYear($data['tdate'])??''; ?></td>
+      <td><?php echo $data['country']??''; ?></td>
+      <td><?php echo $data['discharging_port']??''; ?></td>
+      <td><?php echo $data['delivery_mode']??''; ?></td>
+      <td><?php echo $data['customer_name']??''; ?></td>
+      <td><?php echo $data['customer_group']??''; ?></td>
+      <td><?php echo $data['category']??''; ?></td>
+      <td><?php echo $data['pid']??''; ?></td>
+      <td><?php echo $data['pallets']??''; ?></td>
+      <td><?php echo $data['branding']??''; ?></td> 
+      <td><?php echo $data['total_volume']??''; ?></td> 
+      <td><?php echo $data['volume_per_container']??''; ?></td>
+      <td><?php echo $phosphateModel->calculateNumberOfTc($data['total_volume'],$data['volume_per_container']) ??''; ?></td>
+      <td><?php echo $data['incoterm']??''; ?></td>  
+      <td><?php echo $data['status1']??''; ?></td>
+      <td><?php echo $data['status2']??''; ?></td>  
+      <td><?php echo $data['payment_terms']??''; ?></td> 
+      <td><?php echo $data['payment_terms_days']??''; ?></td> 
+      <td><?php echo $data['estimated_freight']??''; ?></td>   
       <td><?php echo $data['estimated_fob']??''; ?></td> 
-      <td><?php echo $data['real_fob']??''; ?></td>
-      <td><?php echo $data['tdate']??''; ?></td>  
-      <td><?php echo $data['payment_status']??''; ?></td>     
+     
      </tr>
      <?php
       }}else{ ?>
       <tr>
-        <td colspan="17">
+        <td colspan="24">
     <?php echo $fetchData; ?>
   </td>
     <tr>
