@@ -134,9 +134,16 @@ public function getInvoicedAmount($net_quantity, $total_volume)
 
 public function getPaymentDeadline($bldate, $payment_terms_days)
     {
-        $bldateObj = DateTime::createFromFormat('d-m-Y', $bldate);
-        $payment_deadlineObj = $bldateObj->add(new DateInterval("P{$payment_terms_days}D"));
-        $payment_deadline = $payment_deadlineObj->format('d-m-Y');
+        
+        try{
+            $bldateObj = DateTime::createFromFormat('d-m-Y', $bldate);
+            $payment_deadlineObj = $bldateObj->add(new DateInterval("P{$payment_terms_days}D"));
+            $payment_deadline = $payment_deadlineObj->format('d-m-Y');
+        }
+        catch(Exception){
+            return 0;
+        }
+        
         
         return $payment_deadline;
     }
@@ -160,6 +167,7 @@ public function getPaymentDeadline($bldate, $payment_terms_days)
     }
     public function getEta($transit_time,$bldate){
         $numer = (string) $transit_time;
+        
         return date('Y-m-d', strtotime($bldate. ' + '.$numer.' days'));
         
     }

@@ -63,7 +63,7 @@
     require '../dbconfig.php';
     require '../models/User.php';
    $userModel = new User($conn);
-   $tableName = 'logistics';
+   $tableName = 'full_temporary_table';
   // print_r();
     $fetchData = $userModel->selectLogistics();
     if(is_array($fetchData)){      
