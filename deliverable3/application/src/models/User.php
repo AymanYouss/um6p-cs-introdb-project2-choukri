@@ -66,6 +66,15 @@
         return $query->fetchAll() ;
     }
 
+    public function selectAllOd($od){
+        $query = $this->connection->prepare("SELECT * FROM temporary_full_table WHERE od = $od");
+        
+        $query->execute([
+            
+        ]);
+        return $query->fetchAll() ;
+    }
+
     public function selectAll(){
         $query = $this->connection->prepare("SELECT * FROM temporary_full_table LIMIT 5");
         
