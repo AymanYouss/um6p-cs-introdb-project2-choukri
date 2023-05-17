@@ -91,6 +91,14 @@
         ]);
         return $query->fetchAll() ;
     }
+    public function selectADV(){
+        $query = $this->connection->prepare("SELECT t.od, t.ac_status, t.contract, t.contract_id, t.contract_status, t.invoice, t.payment_deadline, t.payment_status FROM temporary_full_table AS t");
+        
+        $query->execute([
+        
+        ]);
+        return $query->fetchAll() ;
+    }
 
     
 
