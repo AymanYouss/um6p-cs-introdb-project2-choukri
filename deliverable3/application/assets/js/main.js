@@ -3,7 +3,7 @@ function showabt(){
     document.getElementById("hide").style.display = "none";
 }
 function showabt1(){
-    document.getElementById("hide").style.display = "absolute";
+    document.getElementById("hide").style.display = "flex";
 }
 (function() {
 //===== Prealoder
