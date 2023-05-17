@@ -33,9 +33,9 @@
     require '../dbconfig.php';
     require '../models/User.php';
    $userModel = new User($conn);
-   $tableName = 'sales_transaction';
+   $tableName = 'temporary_full_table';
   // print_r();
-    $fetchData = $userModel->selectSales();
+    $fetchData = $userModel->selectADV();
     if(is_array($fetchData)){      
       foreach($fetchData as $data){
     ?>
