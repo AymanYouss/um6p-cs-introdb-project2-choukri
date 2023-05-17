@@ -88,7 +88,7 @@
           <div class="col-lg-6">
             <div class="hero-content">
               <h1 class="wow fadeInUp" data-wow-delay=".2s">
-								Sales Dashboard
+								ADV Dashboard
 							</h1>
               <p class="wow fadeInUp" data-wow-delay=".4s">
                 Add, modify, delete rows and entries in the ADV(avis de chargement) table.
@@ -149,7 +149,7 @@
 					<div class="col-lg-4 col-md-8 col-sm-10">
 						<div class="single-feature">
 							<div class="icon color-3">
-              <a style="color:white" href="salesdatabaseview.php" class="lhov"><i class="lni lni-database"></i></a> 
+              <a style="color:white" href="Advdatabaseview.php" class="lhov"><i class="lni lni-database"></i></a> 
 							</div>
 							<div class="content">
 								<h3>Take a look</h3>

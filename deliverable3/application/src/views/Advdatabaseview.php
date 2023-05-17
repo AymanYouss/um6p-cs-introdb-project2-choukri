@@ -32,7 +32,9 @@
     //Create new user (just for testing , the user will be in the session array)
     require '../dbconfig.php';
     require '../models/User.php';
+    require '../models/PhosphateQueries.php';
    $userModel = new User($conn);
+   $phosphateUser = new PhosphateQueries($conn);
    $tableName = 'temporary_full_table';
   // print_r();
     $fetchData = $userModel->selectADV();
@@ -45,7 +47,8 @@
       <td><?php echo $data['contract_id']??''; ?></td>
       <td><?php echo $data['contract_status']??''; ?></td>
       <td><?php echo $data['invoice']??''; ?></td>
-      <td><?php echo $data['payment_deadline']??''; ?></td>
+      <td><?php echo $phosphateUser->getInvoicedAmount($data['net_quantity'],$data['total_volume'])??''; ?></td>
+      <td><?php echo $phosphateUser->getEta($data['payment_terms_days'],$data['bldate']) ??''; ?></td>
       <td><?php echo $data['payment_status']??''; ?></td>
            
      </tr>
