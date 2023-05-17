@@ -24,14 +24,16 @@
     public function register($email, $username, $password, $role) {
         
         $emailQuery = "SELECT * FROM user_credentials WHERE email = :email";
-        $emailStatement = $pdo->prepare($emailQuery);
+        $emailStatement = $this->connection->prepare($emailQuery);
         $emailStatement->execute(['email' => $email]);
 
-        if ($emailStatement->rowCount() > 0) {
-            // Email already exists, prompt user
-            echo "Email already in use. Please choose a different email.";
-            // Additional handling or redirecting can be done here
-            exit;
+        $usernameQuery = "SELECT * FROM user_credentials WHERE username = :username";
+        $usernameStatement = $this->connection->prepare($usernameQuery);
+        $usernameStatement->execute(['username' => $username]);
+
+        if ($emailStatement->rowCount() > 0 || $usernameStatement->rowCount() > 0) {
+            // Email or Username already exist, quit registration
+            return false;
         }
         
         $query = $this->connection->prepare("INSERT INTO user_credentials (username, upassword, email, urole) VALUES (:username, :upassword, :email, :urole)");

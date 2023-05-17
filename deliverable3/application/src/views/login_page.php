@@ -44,5 +44,24 @@
 				</form>
 			</div>
 	</div>
+	<style>
+		.erreur {
+			position: fixed;
+			top: 150px;
+		}
+	</style>
+	<div class="erreur">
+		<?php
+			if (isset($_GET['error'])) {
+				if ($_GET['error'] == 0)
+				{
+					echo "<p>Wrong Email or Password</p>";
+				} else if ($_GET['error'] == 1)
+				{
+					echo "<p>Email or Username already in use</p>";
+				}
+			}
+		?>
+	</div>
 </body>
 </html>

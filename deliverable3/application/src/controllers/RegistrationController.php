@@ -36,7 +36,7 @@ class RegistrationController
                     break;
             }
         } else{
-            header("Location: ../views/loginform.php");
+            header("Location: ../views/login_page.php?error=1");
         }
     }
 }
