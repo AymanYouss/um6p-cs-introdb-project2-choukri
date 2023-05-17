@@ -47,7 +47,7 @@
 
         return $this->login($email, $password);
     }
-
+    
     public function selectSales(){
         $query = $this->connection->prepare("SELECT t.od, t.freight_invoice, t.freight_invoice2, t.freight_invoice3, t.sales_order, t.payment_terms, t.clearance_date, t.payment_terms_days, t.incoterm, t.total_volume, t.invoice, t.userComment, t.estimated_fob, t.real_fob, t.tdate, t.payment_status FROM temporary_full_table AS t");
         
@@ -66,6 +66,23 @@
         return $query->fetchAll() ;
     }
 
+    public function selectLogistics(){
+        $query = $this->connection->prepare("SELECT t.od, t.supplier, t.transporter, t.inspection, t.shipping_line, t.shipped_via, t.loading_date_at_plant, t.quantity_removed_from_the_site, t.stuffing_date, t.real_freight, t.real_fob, t.blno, t.sequence_date, t.transit_time, t.eta, t.bldate, t.blmonth, t.blquarter,t.blyear,t.net_quantity,t.clearance_date,t.userComment,t.type_tc,t.port_loading,t.freight_invoice,t.freight_invoice2,t.freight_invoice3,t.days_of_storage,t.storage_cost,t.days_of_storage2,t.storage_cost2,t.days_of_storage3,t.storage_cost3,t.jours_half,t.jours_1,t.jours_2,t.jours_3,t.mois_facturation  FROM temporary_full_table AS t");
+        
+        $query->execute([
+        
+        ]);
+        return $query->fetchAll() ;
+    }
+    
+    public function selectLogisticsOd($od){
+        $query = $this->connection->prepare("SELECT t.od, t.supplier, t.transporter, t.inspection, t.shipping_line, t.shipped_via, t.loading_date_at_plant, t.quantity_removed_from_the_site, t.stuffing_date, t.real_freight, t.real_fob, t.blno, t.sequence_date, t.transit_time, t.eta, t.bldate, t.blmonth, t.blquarter,t.blyear,t.net_quantity,t.clearance_date,t.userComment,t.type_tc,t.port_loading,t.freight_invoice,t.freight_invoice2,t.freight_invoice3,t.days_of_storage,t.storage_cost,t.days_of_storage2,t.storage_cost2,t.days_of_storage3,t.storage_cost3,t.jours_half,t.jours_1,t.jours_2,t.jours_3,t.mois_facturation  FROM temporary_full_table AS t  WHERE od = $od");
+        
+        $query->execute([
+        
+        ]);
+        return $query->fetchAll() ;
+    }
     public function selectAll(){
         $query = $this->connection->prepare("SELECT * FROM temporary_full_table LIMIT 5");
         
