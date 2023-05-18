@@ -13,6 +13,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Login / Register</title>
 	<link rel="stylesheet" href="../../assets/login_style.css">
+	<script src="../../assets/login_script.js"></script>
 	<?php include 'head.html' ?>
 </head>
 <body>
@@ -55,10 +56,10 @@
 			if (isset($_GET['error'])) {
 				if ($_GET['error'] == 0)
 				{
-					echo "<p>Wrong Email or Password</p>";
+					echo '<div id="error-popup">Incorrect email or password. Please try again.<button id="close-btn">Close</button></div>';
 				} else if ($_GET['error'] == 1)
 				{
-					echo "<p>Email or Username already in use</p>";
+					echo '<div id="error-popup">Email or username already in use.<button id="close-btn">Close</button></div>';
 				}
 			}
 		?>
