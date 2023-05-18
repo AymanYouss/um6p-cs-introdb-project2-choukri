@@ -84,7 +84,7 @@
 		<form action="../controllers/adminEditor2.php" method="POST">
 
         <label for="od">Outbound Delivery:</label>
-        <input type="text" id="od" name="od" value="<?php echo $_SESSION["fetch_admin"][0]["od"]; ?>"><br>
+        <input type="text" id="od" name="od" value="<?php echo $_SESSION["fetch_admin"][0]["od"]; ?>">
             
         <label for="region">Region:</label>
         <?php 
@@ -92,188 +92,188 @@
         ?>
 <input type="text" id="region" name="region" value="<?php
 
-echo $_SESSION["fetch_admin"][0]["region"]; ?>"><br>
+echo $_SESSION["fetch_admin"][0]["region"]; ?>">
 
 <label for="tdate">Tdate:</label>
-<input type="text" id="tdate" name="tdate" value="<?php echo $_SESSION["fetch_admin"][0]["tdate"]; ?>"><br>
+<input type="text" id="tdate" name="tdate" value="<?php echo $_SESSION["fetch_admin"][0]["tdate"]; ?>">
 
 <label for="country">Country:</label>
-<input type="text" id="country" name="country" value="<?php echo $_SESSION["fetch_admin"][0]["country"]; ?>"><br>
+<input type="text" id="country" name="country" value="<?php echo $_SESSION["fetch_admin"][0]["country"]; ?>">
 
 <label for="discharging_port">Discharging Port:</label>
-<input type="text" id="discharging_port" name="discharging_port" value="<?php echo $_SESSION["fetch_admin"][0]["discharging_port"]; ?>"><br>
+<input type="text" id="discharging_port" name="discharging_port" value="<?php echo $_SESSION["fetch_admin"][0]["discharging_port"]; ?>">
 
 <label for="delivery_mode">Delivery Mode:</label>
-<input type="text" id="delivery_mode" name="delivery_mode" value="<?php echo $_SESSION["fetch_admin"][0]["delivery_mode"]; ?>"><br>
+<input type="text" id="delivery_mode" name="delivery_mode" value="<?php echo $_SESSION["fetch_admin"][0]["delivery_mode"]; ?>">
 
 <label for="customer_name">Customer Name:</label>
-<input type="text" id="customer_name" name="customer_name" value="<?php echo $_SESSION["fetch_admin"][0]["customer_name"]; ?>"><br>
+<input type="text" id="customer_name" name="customer_name" value="<?php echo $_SESSION["fetch_admin"][0]["customer_name"]; ?>">
 
 <label for="customer_group">Customer Group:</label>
-<input type="text" id="customer_group" name="customer_group" value="<?php echo $_SESSION["fetch_admin"][0]["customer_group"]; ?>"><br>
+<input type="text" id="customer_group" name="customer_group" value="<?php echo $_SESSION["fetch_admin"][0]["customer_group"]; ?>">
 
 <label for="category">Category:</label>
-<input type="text" id="category" name="category" value="<?php echo $_SESSION["fetch_admin"][0]["category"]; ?>"><br>
+<input type="text" id="category" name="category" value="<?php echo $_SESSION["fetch_admin"][0]["category"]; ?>">
 
 <label for="pid">PID:</label>
-<input type="text" id="pid" name="pid" value="<?php echo $_SESSION["fetch_admin"][0]["pid"]; ?>"><br>
+<input type="text" id="pid" name="pid" value="<?php echo $_SESSION["fetch_admin"][0]["pid"]; ?>">
 
 <label for="pallets">Pallets:</label>
-<input type="text" id="pallets" name="pallets" value="<?php echo $_SESSION["fetch_admin"][0]["pallets"]; ?>"><br>
+<input type="text" id="pallets" name="pallets" value="<?php echo $_SESSION["fetch_admin"][0]["pallets"]; ?>">
 
 <label for="branding">Branding:</label>
-<input type="text" id="branding" name="branding" value="<?php echo $_SESSION["fetch_admin"][0]["branding"]; ?>"><br>
+<input type="text" id="branding" name="branding" value="<?php echo $_SESSION["fetch_admin"][0]["branding"]; ?>">
 
 <label for="total_volume">Total Volume:</label>
-<input type="text" id="total_volume" name="total_volume" value="<?php echo $_SESSION["fetch_admin"][0]["total_volume"]; ?>"><br>
+<input type="text" id="total_volume" name="total_volume" value="<?php echo $_SESSION["fetch_admin"][0]["total_volume"]; ?>">
 
 <label for="volume_per_container">Volume per Container:</label>
-<input type="text" id="volume_per_container" name="volume_per_container" value="<?php echo $_SESSION["fetch_admin"][0]["volume_per_container"]; ?>"><br>
+<input type="text" id="volume_per_container" name="volume_per_container" value="<?php echo $_SESSION["fetch_admin"][0]["volume_per_container"]; ?>">
 
 <label for="incoterm">Incoterm:</label>
-<input type="text" id="incoterm" name="incoterm" value="<?php echo $_SESSION["fetch_admin"][0]["incoterm"]; ?>"><br>
+<input type="text" id="incoterm" name="incoterm" value="<?php echo $_SESSION["fetch_admin"][0]["incoterm"]; ?>">
 
 <label for="status1">Status 1:</label>
-<input type="text" id="status1" name="status1" value="<?php echo $_SESSION["fetch_admin"][0]["status1"]; ?>"><br>
+<input type="text" id="status1" name="status1" value="<?php echo $_SESSION["fetch_admin"][0]["status1"]; ?>">
 
 <label for="status2">Status 2:</label>
-<input type="text" id="status2" name="status2" value="<?php echo $_SESSION["fetch_admin"][0]["status2"]; ?>"><br>
+<input type="text" id="status2" name="status2" value="<?php echo $_SESSION["fetch_admin"][0]["status2"]; ?>">
 
 <label for="payment_terms">Payment Terms:</label>
-<input type="text" id="payment_terms" name="payment_terms" value="<?php echo $_SESSION["fetch_admin"][0]["payment_terms"]; ?>"><br>
+<input type="text" id="payment_terms" name="payment_terms" value="<?php echo $_SESSION["fetch_admin"][0]["payment_terms"]; ?>">
 
 <label for="payment_terms_days">Payment Terms Days:</label>
-<input type="text" id="payment_terms_days" name="payment_terms_days" value="<?php echo $_SESSION["fetch_admin"][0]["payment_terms_days"]; ?>"><br>
+<input type="text" id="payment_terms_days" name="payment_terms_days" value="<?php echo $_SESSION["fetch_admin"][0]["payment_terms_days"]; ?>">
 
 <label for="price">Price:</label>
-<input type="text" id="price" name="price" value="<?php echo $_SESSION["fetch_admin"][0]["price"]; ?>"><br>
+<input type="text" id="price" name="price" value="<?php echo $_SESSION["fetch_admin"][0]["price"]; ?>">
 
 <label for="estimated_freight">Estimated Freight:</label>
-<input type="text" id="estimated_freight" name="estimated_freight" value="<?php echo $_SESSION["fetch_admin"][0]["estimated_freight"]; ?>"><br>
+<input type="text" id="estimated_freight" name="estimated_freight" value="<?php echo $_SESSION["fetch_admin"][0]["estimated_freight"]; ?>">
 
 <label for="estimated_fob">Estimated FOB:</label>
-<input type="text" id="estimated_fob" name="estimated_fob" value="<?php echo $_SESSION["fetch_admin"][0]["estimated_fob"]; ?>"><br>
+<input type="text" id="estimated_fob" name="estimated_fob" value="<?php echo $_SESSION["fetch_admin"][0]["estimated_fob"]; ?>">
 
 <label for="sales_order">Sales Order:</label>
-<input type="text" id="sales_order" name="sales_order" value="<?php echo $_SESSION["fetch_admin"][0]["sales_order"]; ?>"><br>
+<input type="text" id="sales_order" name="sales_order" value="<?php echo $_SESSION["fetch_admin"][0]["sales_order"]; ?>">
 
 <label for="supplier">Supplier:</label>
-<input type="text" id="supplier" name="supplier" value="<?php echo $_SESSION["fetch_admin"][0]["supplier"]; ?>"><br>
+<input type="text" id="supplier" name="supplier" value="<?php echo $_SESSION["fetch_admin"][0]["supplier"]; ?>">
 
 <label for="transporter">Transporter:</label>
-<input type="text" id="transporter" name="transporter" value="<?php echo $_SESSION["fetch_admin"][0]["transporter"]; ?>"><br>
+<input type="text" id="transporter" name="transporter" value="<?php echo $_SESSION["fetch_admin"][0]["transporter"]; ?>">
 
 <label for="inspection">Inspection:</label>
-<input type="text" id="inspection" name="inspection" value="<?php echo $_SESSION["fetch_admin"][0]["inspection"]; ?>"><br>
+<input type="text" id="inspection" name="inspection" value="<?php echo $_SESSION["fetch_admin"][0]["inspection"]; ?>">
 
 <label for="shipping_line">Shipping Line:</label>
-<input type="text" id="shipping_line" name="shipping_line" value="<?php echo $_SESSION["fetch_admin"][0]["shipping_line"]; ?>"><br>
+<input type="text" id="shipping_line" name="shipping_line" value="<?php echo $_SESSION["fetch_admin"][0]["shipping_line"]; ?>">
 
 <label for="shipped_via">Shipped Via:</label>
-<input type="text" id="shipped_via" name="shipped_via" value="<?php echo $_SESSION["fetch_admin"][0]["shipped_via"]; ?>"><br>
+<input type="text" id="shipped_via" name="shipped_via" value="<?php echo $_SESSION["fetch_admin"][0]["shipped_via"]; ?>">
 
 <label for="loading_date_at_plant">Loading Date at Plant:</label>
-<input type="text" id="loading_date_at_plant" name="loading_date_at_plant" value="<?php echo $_SESSION["fetch_admin"][0]["loading_date_at_plant"]; ?>"><br>
+<input type="text" id="loading_date_at_plant" name="loading_date_at_plant" value="<?php echo $_SESSION["fetch_admin"][0]["loading_date_at_plant"]; ?>">
 
 <label for="quantity_removed_from_the_site">Quantity Removed from the Site:</label>
-<input type="text" id="quantity_removed_from_the_site" name="quantity_removed_from_the_site" value="<?php echo $_SESSION["fetch_admin"][0]["quantity_removed_from_the_site"]; ?>"><br>
+<input type="text" id="quantity_removed_from_the_site" name="quantity_removed_from_the_site" value="<?php echo $_SESSION["fetch_admin"][0]["quantity_removed_from_the_site"]; ?>">
 
 <label for="stuffing_date">Stuffing Date:</label>
-<input type="text" id="stuffing_date" name="stuffing_date" value="<?php echo $_SESSION["fetch_admin"][0]["stuffing_date"]; ?>"><br>
+<input type="text" id="stuffing_date" name="stuffing_date" value="<?php echo $_SESSION["fetch_admin"][0]["stuffing_date"]; ?>">
 
 <label for="real_freight">Real Freight:</label>
-<input type="text" id="real_freight" name="real_freight" value="<?php echo $_SESSION["fetch_admin"][0]["real_freight"]; ?>"><br>
+<input type="text" id="real_freight" name="real_freight" value="<?php echo $_SESSION["fetch_admin"][0]["real_freight"]; ?>">
 
 <label for="real_fob">Real FOB:</label>
-<input type="text" id="real_fob" name="real_fob" value="<?php echo $_SESSION["fetch_admin"][0]["real_fob"]; ?>"><br>
+<input type="text" id="real_fob" name="real_fob" value="<?php echo $_SESSION["fetch_admin"][0]["real_fob"]; ?>">
 
 <label for="blno">BL No:</label>
-<input type="text" id="blno" name="blno" value="<?php echo $_SESSION["fetch_admin"][0]["blno"]; ?>"><br>
+<input type="text" id="blno" name="blno" value="<?php echo $_SESSION["fetch_admin"][0]["blno"]; ?>">
 
 <label for="sequence_date">Sequence Date:</label>
-<input type="text" id="sequence_date" name="sequence_date" value="<?php echo $_SESSION["fetch_admin"][0]["sequence_date"]; ?>"><br>
+<input type="text" id="sequence_date" name="sequence_date" value="<?php echo $_SESSION["fetch_admin"][0]["sequence_date"]; ?>">
 
 <label for="transit_time">Transit Time:</label>
-<input type="text" id="transit_time" name="transit_time" value="<?php echo $_SESSION["fetch_admin"][0]["transit_time"]; ?>"><br>
+<input type="text" id="transit_time" name="transit_time" value="<?php echo $_SESSION["fetch_admin"][0]["transit_time"]; ?>">
 
 <label for="bldate">BL Date:</label>
-<input type="text" id="bldate" name="bldate" value="<?php echo $_SESSION["fetch_admin"][0]["bldate"]; ?>"><br>
+<input type="text" id="bldate" name="bldate" value="<?php echo $_SESSION["fetch_admin"][0]["bldate"]; ?>">
 
 <label for="net_quantity">Net Quantity:</label>
-<input type="text" id="net_quantity" name="net_quantity" value="<?php echo $_SESSION["fetch_admin"][0]["net_quantity"]; ?>"><br>
+<input type="text" id="net_quantity" name="net_quantity" value="<?php echo $_SESSION["fetch_admin"][0]["net_quantity"]; ?>">
 
 <label for="clearance_date">Clearance Date:</label>
-<input type="text" id="clearance_date" name="clearance_date" value="<?php echo $_SESSION["fetch_admin"][0]["clearance_date"]; ?>"><br>
+<input type="text" id="clearance_date" name="clearance_date" value="<?php echo $_SESSION["fetch_admin"][0]["clearance_date"]; ?>">
 
 <label for="userComment">User Comment:</label>
-<input type="text" id="userComment" name="userComment" value="<?php echo $_SESSION["fetch_admin"][0]["userComment"]; ?>"><br>
+<input type="text" id="userComment" name="userComment" value="<?php echo $_SESSION["fetch_admin"][0]["userComment"]; ?>">
 
 <label for="type_tc">Type TC:</label>
-<input type="text" id="type_tc" name="type_tc" value="<?php echo $_SESSION["fetch_admin"][0]["type_tc"]; ?>"><br>
+<input type="text" id="type_tc" name="type_tc" value="<?php echo $_SESSION["fetch_admin"][0]["type_tc"]; ?>">
 
 <label for="port_loading">Port Loading:</label>
-<input type="text" id="port_loading" name="port_loading" value="<?php echo $_SESSION["fetch_admin"][0]["port_loading"]; ?>"><br>
+<input type="text" id="port_loading" name="port_loading" value="<?php echo $_SESSION["fetch_admin"][0]["port_loading"]; ?>">
 
 <label for="freight_invoice">Freight Invoice:</label>
 <?php 
 echo "<input type='text' id='freight_invoice' name='freight_invoice' value='".$_SESSION["fetch_admin"][0]["freight_invoice"]."'>";
-?><br>
+?>
 
 <label for="freight_invoice2">Freight Invoice 2:</label>
 <?php 
 echo "<input type='text' id='freight_invoice2' name='freight_invoice2' value='".$_SESSION["fetch_admin"][0]["freight_invoice2"]."'>";
-?><br>
+?>
 
 <label for="freight_invoice3">Freight Invoice 3:</label>
 <?php 
 echo "<input type='text' id='freight_invoice3' name='freight_invoice3' value='".$_SESSION["fetch_admin"][0]["freight_invoice3"]."'>";
-?><br>
+?>
 
 <label for="days_of_storage">Days of Storage:</label>
-<input type="text" id="days_of_storage" name="days_of_storage" value="<?php echo $_SESSION["fetch_admin"][0]["days_of_storage"]; ?>"><br>
+<input type="text" id="days_of_storage" name="days_of_storage" value="<?php echo $_SESSION["fetch_admin"][0]["days_of_storage"]; ?>">
 
 <label for="storage_cost">Storage Cost:</label>
-<input type="text" id="storage_cost" name="storage_cost" value="<?php echo $_SESSION["fetch_admin"][0]["storage_cost"]; ?>"><br>
+<input type="text" id="storage_cost" name="storage_cost" value="<?php echo $_SESSION["fetch_admin"][0]["storage_cost"]; ?>">
 
 <label for="days_of_storage2">Days of Storage 2:</label>
-<input type="text" id="days_of_storage2" name="days_of_storage2" value="<?php echo $_SESSION["fetch_admin"][0]["days_of_storage2"]; ?>"><br>
+<input type="text" id="days_of_storage2" name="days_of_storage2" value="<?php echo $_SESSION["fetch_admin"][0]["days_of_storage2"]; ?>">
 
 <label for="storage_cost2">Storage Cost 2:</label>
-<input type="text" id="storage_cost2" name="storage_cost2" value="<?php echo $_SESSION["fetch_admin"][0]["storage_cost2"]; ?>"><br>
+<input type="text" id="storage_cost2" name="storage_cost2" value="<?php echo $_SESSION["fetch_admin"][0]["storage_cost2"]; ?>">
 
 <label for="days_of_storage3">Days of Storage 3:</label>
-<input type="text" id="days_of_storage3" name="days_of_storage3" value="<?php echo $_SESSION["fetch_admin"][0]["days_of_storage3"]; ?>"><br>
+<input type="text" id="days_of_storage3" name="days_of_storage3" value="<?php echo $_SESSION["fetch_admin"][0]["days_of_storage3"]; ?>">
 
 <label for="storage_cost3">Storage Cost 3:</label>
-<input type="text" id="storage_cost3" name="storage_cost3" value="<?php echo $_SESSION["fetch_admin"][0]["storage_cost3"]; ?>"><br>
+<input type="text" id="storage_cost3" name="storage_cost3" value="<?php echo $_SESSION["fetch_admin"][0]["storage_cost3"]; ?>">
 
 <label for="jours_half">Jours Half:</label>
-<input type="text" id="jours_half" name="jours_half" value="<?php echo $_SESSION["fetch_admin"][0]["jours_half"]; ?>"><br>
+<input type="text" id="jours_half" name="jours_half" value="<?php echo $_SESSION["fetch_admin"][0]["jours_half"]; ?>">
 
 <label for="jours_1">Jours 1:</label>
-<input type="text" id="jours_1" name="jours_1" value="<?php echo $_SESSION["fetch_admin"][0]["jours_1"]; ?>"><br>
+<input type="text" id="jours_1" name="jours_1" value="<?php echo $_SESSION["fetch_admin"][0]["jours_1"]; ?>">
 
 <label for="jours_2">Jours 2:</label>
-<input type="text" id="jours_2" name="jours_2" value="<?php echo $_SESSION["fetch_admin"][0]["jours_2"]; ?>"><br>
+<input type="text" id="jours_2" name="jours_2" value="<?php echo $_SESSION["fetch_admin"][0]["jours_2"]; ?>">
 
 <label for="jours_3">Jours 3:</label>
-<input type="text" id="jours_3" name="jours_3" value="<?php echo $_SESSION["fetch_admin"][0]["jours_3"]; ?>"><br>
+<input type="text" id="jours_3" name="jours_3" value="<?php echo $_SESSION["fetch_admin"][0]["jours_3"]; ?>">
 
 <label for="ac_status">AC Status:</label>
-<input type="text" id="ac_status" name="ac_status" value="<?php echo $_SESSION["fetch_admin"][0]["ac_status"]; ?>"><br>
+<input type="text" id="ac_status" name="ac_status" value="<?php echo $_SESSION["fetch_admin"][0]["ac_status"]; ?>">
 
 <label for="contract_id">Contract ID:</label>
-<input type="text" id="contract_id" name="contract_id" value="<?php echo $_SESSION["fetch_admin"][0]["contract_id"]; ?>"><br>
+<input type="text" id="contract_id" name="contract_id" value="<?php echo $_SESSION["fetch_admin"][0]["contract_id"]; ?>">
 
 <label for="contract_status">Contract Status:</label>
-<input type="text" id="contract_status" name="contract_status" value="<?php echo $_SESSION["fetch_admin"][0]["contract_status"]; ?>"><br>
+<input type="text" id="contract_status" name="contract_status" value="<?php echo $_SESSION["fetch_admin"][0]["contract_status"]; ?>">
 
 <label for="invoice">Invoice:</label>
-<input type="text" id="invoice" name="invoice" value="<?php echo $_SESSION["fetch_admin"][0]["invoice"]; ?>"><br>
+<input type="text" id="invoice" name="invoice" value="<?php echo $_SESSION["fetch_admin"][0]["invoice"]; ?>">
 
 <label for="payment_status">Payment Status:</label>
 
-<input type="text" id="payment_status" name="payment_status" value="<?php echo $_SESSION["fetch_admin"][0]["payment_status"]; ?>"><br>
+<input type="text" id="payment_status" name="payment_status" value="<?php echo $_SESSION["fetch_admin"][0]["payment_status"]; ?>">
 
 
       <input type="submit" value="Submit">

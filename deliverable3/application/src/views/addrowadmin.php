@@ -82,181 +82,181 @@
 			<input type="text" id="od" name="od">
 
 			<label for="region">Region:</label>
-  <input type="text" id="region" name="region"><br>
+  <input type="text" id="region" name="region">
 
   <label for="tdate">Tdate:</label>
-  <input type="text" id="tdate" name="tdate"><br>
+  <input type="text" id="tdate" name="tdate">
 
   <label for="country">Country:</label>
-  <input type="text" id="country" name="country"><br>
+  <input type="text" id="country" name="country">
 
   <label for="discharging_port">Discharging Port:</label>
-  <input type="text" id="discharging_port" name="discharging_port"><br>
+  <input type="text" id="discharging_port" name="discharging_port">
 
   <label for="delivery_mode">Delivery Mode:</label>
-  <input type="text" id="delivery_mode" name="delivery_mode"><br>
+  <input type="text" id="delivery_mode" name="delivery_mode">
 
   <label for="customer_name">Customer Name:</label>
-  <input type="text" id="customer_name" name="customer_name"><br>
+  <input type="text" id="customer_name" name="customer_name">
 
   <label for="customer_group">Customer Group:</label>
-  <input type="text" id="customer_group" name="customer_group"><br>
+  <input type="text" id="customer_group" name="customer_group">
 
   <label for="category">Category:</label>
-  <input type="text" id="category" name="category"><br>
+  <input type="text" id="category" name="category">
 
   <label for="pid">PID:</label>
-  <input type="text" id="pid" name="pid"><br>
+  <input type="text" id="pid" name="pid">
 
   <label for="pallets">Pallets:</label>
-  <input type="text" id="pallets" name="pallets"><br>
+  <input type="text" id="pallets" name="pallets">
 
   <label for="branding">Branding:</label>
-  <input type="text" id="branding" name="branding"><br>
+  <input type="text" id="branding" name="branding">
 
   <label for="total_volume">Total Volume:</label>
-  <input type="text" id="total_volume" name="total_volume"><br>
+  <input type="text" id="total_volume" name="total_volume">
 
   <label for="volume_per_container">Volume per Container:</label>
-  <input type="text" id="volume_per_container" name="volume_per_container"><br>
+  <input type="text" id="volume_per_container" name="volume_per_container">
 
   <label for="incoterm">Incoterm:</label>
-  <input type="text" id="incoterm" name="incoterm"><br>
+  <input type="text" id="incoterm" name="incoterm">
 
   <label for="status1">Status 1:</label>
-  <input type="text" id="status1" name="status1"><br>
+  <input type="text" id="status1" name="status1">
 
   <label for="status2">Status 2:</label>
-  <input type="text" id="status2" name="status2"><br>
+  <input type="text" id="status2" name="status2">
 
   <label for="payment_terms">Payment Terms:</label>
-  <input type="text" id="payment_terms" name="payment_terms"><br>
+  <input type="text" id="payment_terms" name="payment_terms">
 
   <label for="payment_terms_days">Payment Terms Days:</label>
-  <input type="text" id="payment_terms_days" name="payment_terms_days"><br>
+  <input type="text" id="payment_terms_days" name="payment_terms_days">
 
   <label for="price">Price:</label>
-  <input type="text" id="price" name="price"><br>
+  <input type="text" id="price" name="price">
 
   <label for="estimated_freight">Estimated Freight:</label>
-  <input type="text" id="estimated_freight" name="estimated_freight"><br>
+  <input type="text" id="estimated_freight" name="estimated_freight">
 
   <label for="estimated_fob">Estimated FOB:</label>
-  <input type="text" id="estimated_fob" name="estimated_fob"><br>
+  <input type="text" id="estimated_fob" name="estimated_fob">
 
   <label for="sales_order">Sales Order:</label>
-  <input type="text" id="sales_order" name="sales_order"><br>
+  <input type="text" id="sales_order" name="sales_order">
 
   <label for="supplier">Supplier:</label>
-  <input type="text" id="supplier" name="supplier"><br>
+  <input type="text" id="supplier" name="supplier">
 
   <label for="transporter">Transporter:</label>
-  <input type="text" id="transporter" name="transporter"><br>
+  <input type="text" id="transporter" name="transporter">
 
   <label for="inspection">Inspection:</label>
-  <input type="text" id="inspection" name="inspection"><br>
+  <input type="text" id="inspection" name="inspection">
 
   <label for="shipping_line">Shipping Line:</label>
-  <input type="text" id="shipping_line" name="shipping_line"><br>
+  <input type="text" id="shipping_line" name="shipping_line">
 
   <label for="shipped_via">Shipped Via:</label>
-  <input type="text" id="shipped_via" name="shipped_via"><br>
+  <input type="text" id="shipped_via" name="shipped_via">
 
   <label for="loading_date_at_plant">Loading Date at Plant:</label>
-  <input type="text" id="loading_date_at_plant" name="loading_date_at_plant"><br>
+  <input type="text" id="loading_date_at_plant" name="loading_date_at_plant">
 
   <label for="quantity_removed_from_the_site">Quantity Removed from the Site:</label>
-  <input type="text" id="quantity_removed_from_the_site" name="quantity_removed_from_the_site"><br>
+  <input type="text" id="quantity_removed_from_the_site" name="quantity_removed_from_the_site">
 
   <label for="stuffing_date">Stuffing Date:</label>
-  <input type="text" id="stuffing_date" name="stuffing_date"><br>
+  <input type="text" id="stuffing_date" name="stuffing_date">
 
   <label for="real_freight">Real Freight:</label>
-  <input type="text" id="real_freight" name="real_freight"><br>
+  <input type="text" id="real_freight" name="real_freight">
 
   <label for="real_fob">Real FOB:</label>
-  <input type="text" id="real_fob" name="real_fob"><br>
+  <input type="text" id="real_fob" name="real_fob">
 
   <label for="blno">BL No:</label>
-  <input type="text" id="blno" name="blno"><br>
+  <input type="text" id="blno" name="blno">
 
   <label for="sequence_date">Sequence Date:</label>
-  <input type="text" id="sequence_date" name="sequence_date"><br>
+  <input type="text" id="sequence_date" name="sequence_date">
 
   <label for="transit_time">Transit Time:</label>
-  <input type="text" id="transit_time" name="transit_time"><br>
+  <input type="text" id="transit_time" name="transit_time">
 
   <label for="bldate">BL Date:</label>
-  <input type="text" id="bldate" name="bldate"><br>
+  <input type="text" id="bldate" name="bldate">
 
   <label for="net_quantity">Net Quantity:</label>
-  <input type="text" id="net_quantity" name="net_quantity"><br>
+  <input type="text" id="net_quantity" name="net_quantity">
 
   <label for="clearance_date">Clearance Date:</label>
-  <input type="text" id="clearance_date" name="clearance_date"><br>
+  <input type="text" id="clearance_date" name="clearance_date">
 
   <label for="userComment">User Comment:</label>
-  <input type="text" id="userComment" name="userComment"><br>
+  <input type="text" id="userComment" name="userComment">
 
   <label for="type_tc">Type TC:</label>
-  <input type="text" id="type_tc" name="type_tc"><br>
+  <input type="text" id="type_tc" name="type_tc">
 
   <label for="port_loading">Port Loading:</label>
-  <input type="text" id="port_loading" name="port_loading"><br>
+  <input type="text" id="port_loading" name="port_loading">
 
   <label for="freight_invoice">Freight Invoice:</label>
-  <input type="text" id="freight_invoice" name="freight_invoice"><br>
+  <input type="text" id="freight_invoice" name="freight_invoice">
 
   <label for="freight_invoice2">Freight Invoice 2:</label>
-  <input type="text" id="freight_invoice2" name="freight_invoice2"><br>
+  <input type="text" id="freight_invoice2" name="freight_invoice2">
 
   <label for="freight_invoice3">Freight Invoice 3:</label>
-  <input type="text" id="freight_invoice3" name="freight_invoice3"><br>
+  <input type="text" id="freight_invoice3" name="freight_invoice3">
 
   <label for="days_of_storage">Days of Storage:</label>
-  <input type="text" id="days_of_storage" name="days_of_storage"><br>
+  <input type="text" id="days_of_storage" name="days_of_storage">
 
   <label for="storage_cost">Storage Cost:</label>
-  <input type="text" id="storage_cost" name="storage_cost"><br>
+  <input type="text" id="storage_cost" name="storage_cost">
 
   <label for="days_of_storage2">Days of Storage 2:</label>
-  <input type="text" id="days_of_storage2" name="days_of_storage2"><br>
+  <input type="text" id="days_of_storage2" name="days_of_storage2">
 
   <label for="storage_cost2">Storage Cost 2:</label>
-  <input type="text" id="storage_cost2" name="storage_cost2"><br>
+  <input type="text" id="storage_cost2" name="storage_cost2">
 
   <label for="days_of_storage3">Days of Storage 3:</label>
-  <input type="text" id="days_of_storage3" name="days_of_storage3"><br>
+  <input type="text" id="days_of_storage3" name="days_of_storage3">
 
   <label for="storage_cost3">Storage Cost 3:</label>
-  <input type="text" id="storage_cost3" name="storage_cost3"><br>
+  <input type="text" id="storage_cost3" name="storage_cost3">
 
   <label for="jours_half">Jours Half:</label>
-  <input type="text" id="jours_half" name="jours_half"><br>
+  <input type="text" id="jours_half" name="jours_half">
 
   <label for="jours_1">Jours 1:</label>
-  <input type="text" id="jours_1" name="jours_1"><br>
+  <input type="text" id="jours_1" name="jours_1">
 
   <label for="jours_2">Jours 2:</label>
-  <input type="text" id="jours_2" name="jours_2"><br>
+  <input type="text" id="jours_2" name="jours_2">
 
   <label for="jours_3">Jours 3:</label>
-  <input type="text" id="jours_3" name="jours_3"><br>
+  <input type="text" id="jours_3" name="jours_3">
 
   <label for="ac_status">AC Status:</label>
-  <input type="text" id="ac_status" name="ac_status"><br>
+  <input type="text" id="ac_status" name="ac_status">
 
   <label for="contract_id">Contract ID:</label>
-  <input type="text" id="contract_id" name="contract_id"><br>
+  <input type="text" id="contract_id" name="contract_id">
 
   <label for="contract_status">Contract Status:</label>
-  <input type="text" id="contract_status" name="contract_status"><br>
+  <input type="text" id="contract_status" name="contract_status">
 
   <label for="invoice">Invoice:</label>
-  <input type="text" id="invoice" name="invoice"><br>
+  <input type="text" id="invoice" name="invoice">
 
   <label for="Payment_status">Payment Status:</label>
-  <input type="text" id="Payment_status" name="Payment_status"><br>
+  <input type="text" id="Payment_status" name="Payment_status">
 
       <input type="submit" value="Submit">
 
