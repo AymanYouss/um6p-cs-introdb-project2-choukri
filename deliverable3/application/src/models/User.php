@@ -92,6 +92,10 @@
         return $query->fetchAll() ;
     }
 
+    public function pushSales(){
+         
+    }
+
     
 
     //if adding a functionality, public function etc..
