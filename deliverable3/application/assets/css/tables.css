@@ -64,7 +64,7 @@ main.table{
 
 .table__header .input-group:hover {
         width: 45%;
-        background-color: #fff8;
+        background-color: rgba(118, 171, 138, 0.533);
         box-shadow: 0 .1rem .4rem #0002;
     }
 .table__header .input-group input {
