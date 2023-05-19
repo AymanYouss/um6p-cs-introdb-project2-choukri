@@ -73,7 +73,7 @@
                       <a class="page-scroll" href="#tracking" id="abt" onmouseover="showabt1()" onmouseout="showabt()">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../controllers/logout.php" class="page-scroll">logout</a>
+                        <a href="../controllers/logout.php">logout</a>
                     </li>
                     
                   </ul>
