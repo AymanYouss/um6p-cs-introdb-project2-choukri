@@ -1,3 +1,15 @@
+<?php
+	if(!isset($_SESSION))
+	{
+		session_start();
+	}
+
+
+  if (!isset($_SESSION) || $_SESSION["role"] != "adv") {
+    include_once '../controllers/redirect.php';
+  }
+?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="">
   <head>
