@@ -65,6 +65,15 @@
         ]);
         return $query->fetchAll() ;
     }
+    public function selectADVod($od){
+        $query = $this->connection->prepare("SELECT t.od, t.ac_status, t.contract_id, t.contract_status, t.invoice, t.payment_status,t.net_quantity,t.total_volume FROM temporary_full_table AS t WHERE od = $od");
+        
+        $query->execute([
+            
+        ]);
+        return $query->fetchAll() ;
+    }
+
 
     public function selectAllOd($od){
         $query = $this->connection->prepare("SELECT * FROM temporary_full_table WHERE od = $od");
