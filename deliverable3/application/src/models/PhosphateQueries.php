@@ -35,12 +35,12 @@ public function getYear($date)
 {
 
     $datetime = DateTime::createFromFormat('Y-m-d', $date);
-    $a = $datetime->format('y');
+    $a = $datetime->format('Y');
 
     if ($a < 0){
         return 0;
     }
-    return $datetime->format('y');
+    return $datetime->format('Y');
    
 }
 
@@ -48,12 +48,12 @@ public function getMonth($date)
 {
 
     $datetime = DateTime::createFromFormat('Y-m-d', $date);
-    $a = $datetime->format('y');
+    $a = $datetime->format('m');
 
     if ($a < 0){
         return 0;
     }
-    return $datetime->format('y');
+    return $datetime->format('m');
    
 }
 
