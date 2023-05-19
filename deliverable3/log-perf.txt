@@ -1,0 +1,21 @@
+mysql> SELECT COUNT(*) FROM shipment JOIN belongs_to WHERE shipment.storage_cost <> 0;
++----------+
+| COUNT(*) |
++----------+
+| 19969000 |
++----------+
+1 row in set (3.63 sec)
+
+mysql> CREATE index storagecst ON shipment(storage_cost);
+Query OK, 1000000 rows affected (8.65 sec)
+Records: 1000000  Duplicates: 0  Warnings: 0
+
+mysql> SELECT COUNT(*) FROM shipment JOIN belongs_to WHERE shipment.storage_cost <> 0;
++----------+
+| COUNT(*) |
++----------+
+| 19969000 |
++----------+
+1 row in set (0.47 sec)
+
+mysql> Terminal close -- exit!

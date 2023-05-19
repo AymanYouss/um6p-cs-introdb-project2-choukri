@@ -34,6 +34,8 @@ $query = $conn->prepare("INSERT INTO temporary_full_table
         estimated_fob = :estimated_fob
     WHERE od = :od");
 
+
+
 $query->execute([
     'region' => $_POST["region"],
     'tdate' => $_POST["tdate"],
