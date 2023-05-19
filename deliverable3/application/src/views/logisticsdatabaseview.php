@@ -47,7 +47,7 @@
          <th>Days of Storage</th>
          <th>Storage Cost</th>
          <th>Days of Storage 2</th>
-         <th>Storage Cost</th>
+         <th>Storage Cost 2</th>
          <th>Days of Storage 3</th>
          <th>Storage Cost 3</th>
          <th>1/2 Jours</th>
@@ -62,10 +62,12 @@
     //Create new user (just for testing , the user will be in the session array)
     require '../dbconfig.php';
     require '../models/User.php';
+    require '../models/PhosphateQueries.php';
    $userModel = new User($conn);
-   $tableName = 'full_temporary_table';
+   $phosphateModel = new PhosphateQueries($conn);
+   $tableName = 'temporary_full_table';
   // print_r();
-    $fetchData = $userModel->selectLogistics();
+    $fetchData = $userModel->selectAll();
     if(is_array($fetchData)){      
       foreach($fetchData as $data){
     ?>
@@ -84,11 +86,11 @@
       <td><?php echo $data['blno']??''; ?></td> 
       <td><?php echo $data['sequence_date']??''; ?></td> 
       <td><?php echo $data['transit_time']??''; ?></td>
-      <td><?php echo $data['eta']??''; ?></td>  
+      <td><?php echo $phosphateModel->getEta($data['transit_time'],$data['bldate'])??''; ?></td>  
       <td><?php echo $data['bldate']??''; ?></td> 
-      <td><?php echo $data['blmonth']??''; ?></td>  
-      <td><?php echo $data['blquarter']??''; ?></td>      
-      <td><?php echo $data['blyear']??''; ?></td>      
+      <td><?php echo $phosphateModel->getBlMonth($data['bldate'])??''; ?></td>  
+      <td><?php echo $phosphateModel->getQuarter($data['bldate'])??''; ?></td>      
+      <td><?php echo $phosphateModel->getYear($data['bldate'])??''; ?></td>      
       <td><?php echo $data['net_quantity']??''; ?></td>      
       <td><?php echo $data['clearance_date']??''; ?></td>      
       <td><?php echo $data['userComment']??''; ?></td>      
@@ -107,7 +109,7 @@
       <td><?php echo $data['jours_1']??''; ?></td>
       <td><?php echo $data['jours_2']??''; ?></td>  
       <td><?php echo $data['jours_3']??''; ?></td>  
-      <td><?php echo $data['mois_facturation']??''; ?></td>  
+      <td><?php echo $phosphateModel->getMoisFacturation($data['$clearance_date'])??''; ?></td>  
 
 
      </tr>
