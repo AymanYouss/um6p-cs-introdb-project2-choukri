@@ -83,7 +83,7 @@ CREATE TABLE temporary_full_table (
     invoice REAL,
     -- invoiced amount
     -- payment_deadline
-    Payment_status VARCHAR(255)
+    payment_status VARCHAR(255)
     
 );
 

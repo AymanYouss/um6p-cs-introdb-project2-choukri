@@ -82,6 +82,7 @@ h6 {
 
 .hide{
   display: none;
+  position: fixed;
   background-color: rgb(35, 65, 83);
   height: 200px;
   color: white;

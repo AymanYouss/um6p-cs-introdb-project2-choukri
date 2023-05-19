@@ -65,6 +65,24 @@
         ]);
         return $query->fetchAll() ;
     }
+    public function selectADVod($od){
+        $query = $this->connection->prepare("SELECT t.od, t.ac_status, t.contract_id, t.contract_status, t.invoice, t.payment_status,t.net_quantity,t.total_volume FROM temporary_full_table AS t WHERE od = $od");
+        
+        $query->execute([
+            
+        ]);
+        return $query->fetchAll() ;
+    }
+
+
+    public function selectAllOd($od){
+        $query = $this->connection->prepare("SELECT * FROM temporary_full_table WHERE od = $od");
+        
+        $query->execute([
+            
+        ]);
+        return $query->fetchAll() ;
+    }
 
     public function selectLogistics(){
         $query = $this->connection->prepare("SELECT t.od, t.supplier, t.transporter, t.inspection, t.shipping_line, t.shipped_via, t.loading_date_at_plant, t.quantity_removed_from_the_site, t.stuffing_date, t.real_freight, t.real_fob, t.blno, t.sequence_date, t.transit_time, t.eta, t.bldate, t.blmonth, t.blquarter,t.blyear,t.net_quantity,t.clearance_date,t.userComment,t.type_tc,t.port_loading,t.freight_invoice,t.freight_invoice2,t.freight_invoice3,t.days_of_storage,t.storage_cost,t.days_of_storage2,t.storage_cost2,t.days_of_storage3,t.storage_cost3,t.jours_half,t.jours_1,t.jours_2,t.jours_3,t.mois_facturation  FROM temporary_full_table AS t");
@@ -98,6 +116,10 @@
         
         ]);
         return $query->fetchAll() ;
+    }
+
+    public function pushSales(){
+         
     }
 
     
