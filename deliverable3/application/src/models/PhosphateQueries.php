@@ -44,6 +44,19 @@ public function getYear($date)
    
 }
 
+public function getMonth($date)
+{
+
+    $datetime = DateTime::createFromFormat('Y-m-d', $date);
+    $a = $datetime->format('y');
+
+    if ($a < 0){
+        return 0;
+    }
+    return $datetime->format('y');
+   
+}
+
 public function calculateNumberOfTc($total_volume,$volume_per_container)
 {
     try{

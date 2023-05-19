@@ -85,7 +85,7 @@
 			<input type="text" id="supplier" name="supplier">
 
 			<label for="transporter">Transporter</label>
-			<input type="text" id="transporter" name="freight_invoice2">
+			<input type="text" id="transporter" name="transporter">
 
 			<label for="inspection">Inspection</label>
 			<input type="text" id="inspection" name="inspection">

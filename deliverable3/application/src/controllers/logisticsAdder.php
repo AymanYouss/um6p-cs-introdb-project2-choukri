@@ -27,7 +27,7 @@ $query->execute([
   'transit_time' => $_POST["transit_time"],
   'eta' => $phosphateModel->getEta($_POST['transit_time'],$_POST['bldate']),
   'bldate' => $_POST["bldate"],
-  'blmonth' => $phosphateModel->getBlMonth($_POST["bldate"]),
+  'blmonth' => $phosphateModel->getMonth($_POST["bldate"]),
   'blquarter' => $phosphateModel->getQuarter($_POST["bldate"]),
   'blyear' => $phosphateModel->getYear($_POST["bldate"]),
   'net_quantity' => $_POST["net_quantity"],
@@ -48,7 +48,7 @@ $query->execute([
   'jours_1' => $_POST["jours_1"],
   'jours_2' => $_POST["jours_2"],
   'jours_3' => $_POST["jours_3"],
-  'mois_facturation' => $phosphateModel->getMoisFacturation($_POST["$clearance_date"])
+  'mois_facturation' => $phosphateModel->getMoisFacturation($_POST["clearance_date"])
 ]);
 
 header("Location: /src/views/logisticsdatabaseview.php");
