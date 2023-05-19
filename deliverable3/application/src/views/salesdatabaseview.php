@@ -18,29 +18,29 @@
       <table class="table table-bordered">
        <thead>
         <th>Outbound delivery</th>
-        <th>region</th>
-        <th>tdate</th>
+        <th>Region</th>
+        <th>Tdate</th>
         <th>Quarter</th>
         <th>Year</th>
-        <th>country</th>
-        <th>discharging_port</th>
-        <th>delivery_mode</th>
-        <th>customer_name</th>
-        <th>customer_group</th>
-        <th>category</th>
-        <th>pid</th>
-        <th>pallets</th>
-        <th>branding</th>
-        <th>total_volume</th>
-        <th>volume_per_container</th>
+        <th>Country</th>
+        <th>Discharching port</th>
+        <th>Delivery Mode</th>
+        <th>Customer name</th>
+        <th>Customer group</th>
+        <th>Category</th>
+        <th>Pid</th>
+        <th>Pallets</th>
+        <th>Branding</th>
+        <th>Total volume </th>
+        <th>Volume per container</th>
         <th>Number of tc</th>
-        <th>incoterm</th>
-        <th>status1</th>
-        <th>status2</th>
-        <th>payment_terms</th>
-        <th>payment_terms_days</th>
-        <th>estimated_freight</th>
-        <th>estimated_fob</th>
+        <th>Incoterm</th>
+        <th>Status 1</th>
+        <th>Status 2</th>
+        <th>Payment Terms</th>
+        <th>Payment Terms Days </th>
+        <th>EStimated Freight</th>
+        <th>Estimated FOB</th>
     </thead>
     <tbody>
     <?php
@@ -50,7 +50,7 @@
     require '../models/PhosphateQueries.php';
    $userModel = new User($conn);
    $phosphateModel = new PhosphateQueries($conn);
-   $tableName = 'sales_transaction';
+   $tableName = 'full_temporary_table';
   
     $fetchData = $userModel->selectAll();
     //var_dump($fetchData);

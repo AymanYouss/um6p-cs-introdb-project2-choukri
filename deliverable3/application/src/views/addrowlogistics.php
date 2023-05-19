@@ -77,7 +77,7 @@
 <body>
 	<div class="container">
 		<h1>My Form</h1>
-		<form action="../controllers/salesAdder.php" method="POST">
+		<form action="../controllers/logisticsAdder.php" method="POST">
 			<label for="od">Outbound delivery:</label>
 			<input type="text" id="od" name="od">
 
@@ -96,41 +96,102 @@
 			<label for="shipped_via">Shipped via</label>
 			<input type="text" id="shipped_via" name="shipped_via">
 
-		
 
-            <label for="loading_day_at_plant">Loading day at plant</label>
-            <input type="date" id="loading_day_at_plant" name="loading_day_at_plant">
+            <label for="loading_date_at_plant">Loading date at plant</label>
+            <input type="date" id="loading_date_at_plant" name="loading_date_at_plant">
 
-            <label for="quantity_removed_from_site">Quantite enleve du site</label>
+            <label for="quantity_removed_from_site">Quantity removed from the site</label>
             <input type="number" id="quantity_removed_from_site" name="quantity_removed_from_site">
 
-            <label for="inco">Stuffing date</label>
-            <input type="text" id="incoterm" name="incoterm">
+            <label for="stuffing_date">Stuffing date:</label>
+            <input type="date" id="stuffing_date" name="stuffing_date">
 
-            <label for="total_volume">Total Volume:</label>
-            <input type="number" id="total_volume" name="total_volume">
+            <label for="real_freight">Real freight:</label>
+            <input type="number" id="real_freight" name="real_freight">
 
-            <label for="invoice">Invoice:</label>
-            <input type="text" id="invoice" name="invoice">
+			<label for="real_fob">Real FOB:</label>
+            <input type="number" id="real_fob" name="real_fob">
 
-            <label for="userComment">User Comment:</label>
+            <label for="blno">BL N°:</label>
+            <input type="text" id="blno" name="blno">
+
+            <label for="transit_time">Transit Time:</label>
+            <input type="number" id="transit_time" name="transit_time">
+
+			<label for="eta">>ETA(Estimated Time of Arrival):</label>
+            <input type="date" id="eta" name="eta">
+
+			<label for="bldate">BL date estimated:</label>
+            <input type="date" id="bldate" name="bldate">
+
+			<label for="blmonth">BL Month:</label>
+            <input type="text" id="blmonth" name="blmonth">
+
+			<label for="blquarter">BL Quarter:</label>
+            <input type="text" id="blquarter" name="blquarter">
+
+			<label for="blyear">BL Year:</label>
+            <input type="text" id="blyear" name="blyear">
+
+			<label for="net_quantity">Net Quantity:</label>
+            <input type="number" id="net_quantity" name="net_quantity">
+
+		
+            <label for="clearance_date">CLearance Date:</label>
+            <input type="date" id="clearance_date" name="clearance_date">
+
+			
+       		<label for="userComment">Comment:</label>
             <input type="text" id="userComment" name="userComment">
 
-            <label for="estimated_fob">Estimated FOB:</label>
-            <input type="text" id="estimated_fob" name="estimated_fob">
+					
+            <label for="type_tc">Type TC:</label>
+            <input type="text" id="type_tc" name="type_tc">
+					
+            <label for="port_loading">Port Loading:</label>
+            <input type="text" id="port_loading" name="port_loading">
+					
+            <label for="freight_invoice">Freight Invoice 1:</label>
+            <input type="text" id="freight_invoice" name="freight_invoice">
+					
+            <label for="freight_invoice2">Freight Invoice 2:</label>
+            <input type="text" id="freight_invoice2" name="freight_invoice2">
+					
+            <label for="freight_invoice3">Freight Invoice 3:</label>
+            <input type="text" id="freight_invoice3" name="freight_invoice3">
 
-            <label for="real_fob">Real FOB:</label>
-            <input type="text" id="real_fob" name="real_fob">
+			<label for="days_of_storage">Days of Storage:</label>
+            <input type="text" id="days_of_storage" name="days_of_storage">
 
-            <label for="tdate">Transaction Date:</label>
-            <input type="date" id="tdate" name="tdate">
+			<label for="storage_cost">Storage Cost:</label>
+            <input type="text" id="storage_cost" name="storage_cost">
 
-            <label for="payment_status">Payment Status:</label>
-            <select id="payment_status" name="payment_status">
-                <option value="pending">Pending</option>
-                <option value="paid">Paid</option>
-                <option value="late">Late</option>
-            </select>
+			<label for="days_of_storage2">Days of Storage 2:</label>
+            <input type="text" id="days_of_storage2" name="days_of_storage2">
+
+			<label for="storage_cost2">Storage Cost 2:</label>
+            <input type="text" id="storage_cost2" name="storage_cost2">
+
+			<label for="days_of_storage3">Days of Storage 3:</label>
+            <input type="text" id="days_of_storage3" name="days_of_storage3">
+
+			<label for="storage_cost3">Storage Cost 3:</label>
+            <input type="text" id="storage_cost3" name="storage_cost3">
+
+			<label for="jours_half">1/2 Jours:</label>
+            <input type="number" id="jours_half" name="jours_half">
+
+			<label for="jours_1">1 Jours:</label>
+            <input type="number" id="jours_1" name="jours_1">
+
+			<label for="jours_2">2 Jours:</label>
+            <input type="number" id="jours_2" name="jours_2">
+
+			<label for="jours_3">3 Jours:</label>
+            <input type="number" id="jours_3" name="jours_3">
+
+			<label for="mois_facturation">Mois de facturation:</label>
+            <input type="date" id="mois_facturation" name="mois_facturation">
 
       <input type="submit" value="Submit">
 
