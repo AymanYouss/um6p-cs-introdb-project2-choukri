@@ -1,14 +1,3 @@
-<?php
-	if(!isset($_SESSION))
-	{
-		session_start();
-	}
-
-
-  if (!isset($_SESSION) || $_SESSION["role"] != "adv") {
-    include_once '../controllers/redirect.php';
-  }
-?>
 
 <!DOCTYPE html>
 <html class="no-js" lang="">
@@ -139,7 +128,7 @@
 					<div class="col-lg-4 col-md-8 col-sm-10">
 						<div class="single-feature">
 							<div class="icon color-1">
-								<a style="color:white" href="addrowsales.php" class="lhov"><i class="lni lni-pointer-up"></i></a> 
+								<a style="color:white" href="addRowADV.php" class="lhov"><i class="lni lni-pointer-up"></i></a> 
 							</div>
 							<div class="content">
 								<h3>Add a row</h3>
@@ -150,7 +139,7 @@
 					<div class="col-lg-4 col-md-8 col-sm-10">
 						<div class="single-feature">
 							<div class="icon color-2">
-								<a style="color:white" href="editrowssales.php" class="lhov"><i class="lni lni-laptop-phone"></i></a> 
+								<a style="color:white" href="editrowADV.php" class="lhov"><i class="lni lni-laptop-phone"></i></a> 
 							</div>
 							<div class="content">
 								<h3>Edit a row</h3>

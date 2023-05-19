@@ -1,15 +1,22 @@
+
+
+
+
+
+
+
 <?php
     if(!isset($_SESSION)) 
     { 
         session_start(); 
     } 
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../../assets/css/tables.css">
-  <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon.svg"/>
+    <link rel="stylesheet" href="../../assets/css/tables.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon.svg"/>
     <link rel="stylesheet" href="../../assets/css/bootstrap-5.0.0-alpha-2.min.css" />
     <link rel="stylesheet" href="../../assets/css/LineIcons.2.0.css" />
     <link rel="stylesheet" href="../../assets/css/animate.css" />
@@ -38,11 +45,13 @@
                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                   <ul id="nav" class="navbar-nav ml-auto">
                     <li class="nav-item">
-                      <a class="page-scroll" href="../controllers/redirect.php">Home</a>
+                      <a class="page-scroll" href="#home">Home</a>
                     </li>
-              
                     <li class="nav-item">
-                        <a href="../controllers/logout.php" class="page-scroll">logout</a>
+                      <a class="page-scroll" href="#feature">Actions</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="page-scroll" href="#tracking" id="abt" onmouseover="showabt1()" onmouseout="showabt()">About us</a>
                     </li>
                     
                   </ul>
@@ -61,54 +70,62 @@
       
     </header>
 <body>
-<div class="container">
+<main class="table">
+        <section class="table__header">
+            <h1>Logistics </h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                
+          
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                    <th>Outbound delivery</th>
+                    <th>Supplier</th>
+                    <th>Transporter</th>
+                    <th>Inspection</th>
+                    <th>Sphipping Line</th>
+                    <th>Shipped Via</th>
+                    <th>Loading date at Plant</th>
+                    <th>Quantity removed from the site</th>
+                    <th>Stuffing date</th>
+                    <th>Real freight</th>
+                    <th>Real FOB</th>
+                    <th>BL N°</th>
+                    <th>Sequence Date </th>
+                    <th>Transit Time </th>
+                    <th>ETA(Estimated Time of Arrival) </th>
+                    <th>BL date estimated </th>
+                    <th>BL Month</th>
+                    <th>BL Quarter</th>
+                    <th>BL Year</th>
+                    <th>Net Quantity</th>
+                    <th>CLearance Date</th>
+                    <th>Comment</th>
+                    <th>Type TC</th>
+                    <th>Port Loading</th>
+                    <th>Freight Invoice 1</th>
+                    <th>Freight Invoice 2</th>
+                    <th>Freight Invoice 3</th>
+                    <th>Days of Storage</th>
+                    <th>Storage Cost</th>
+                    <th>Days of Storage 2</th>
+                    <th>Storage Cost 2</th>
+                    <th>Days of Storage 3</th>
+                    <th>Storage Cost 3</th>
+                    <th>1/2 Jours</th>
+                    <th>1 Jours</th>
+                    <th>2 Jours</th>
+                    <th>3 Jours</th>
+                    <th>Mois Facturation</th>
 
-   <div class="">
-    
-    <div class="table-responsive">
-      <table class="table table-bordered">
-       <thead>
-        <th>Outbound delivery</th>
-         <th>Supplier</th>
-         <th>Transporter</th>
-         <th>Inspection</th>
-         <th>Sphipping Line</th>
-         <th>Shipped Via</th>
-         <th>Loading date at Plant</th>
-         <th>Quantity removed from the site</th>
-         <th>Stuffing date</th>
-         <th>Real freight</th>
-         <th>Real FOB</th>
-         <th>BL N°</th>
-         <th>Sequence Date </th>
-         <th>Transit Time </th>
-         <th>ETA(Estimated Time of Arrival) </th>
-         <th>BL date estimated </th>
-         <th>BL Month</th>
-         <th>BL Quarter</th>
-         <th>BL Year</th>
-         <th>Net Quantity</th>
-         <th>CLearance Date</th>
-         <th>Comment</th>
-         <th>Type TC</th>
-         <th>Port Loading</th>
-         <th>Freight Invoice 1</th>
-         <th>Freight Invoice 2</th>
-         <th>Freight Invoice 3</th>
-         <th>Days of Storage</th>
-         <th>Storage Cost</th>
-         <th>Days of Storage 2</th>
-         <th>Storage Cost 2</th>
-         <th>Days of Storage 3</th>
-         <th>Storage Cost 3</th>
-         <th>1/2 Jours</th>
-         <th>1 Jours</th>
-         <th>2 Jours</th>
-         <th>3 Jours</th>
-         <th>Mois Facturation</th>
+                    </tr>
+                </thead>
 
-    </thead>
     <tbody>
+    
     <?php
     //Create new user (just for testing , the user will be in the session array)
     require '../dbconfig.php';
@@ -117,13 +134,15 @@
    $userModel = new User($conn);
    $phosphateModel = new PhosphateQueries($conn);
    $tableName = 'temporary_full_table';
+   
+  
   // print_r();
     $fetchData = $userModel->selectAll();
     if(is_array($fetchData)){      
       foreach($fetchData as $data){
     ?>
       <tr>
-      <td><?php echo $data['od']??''; ?></td>
+      <td><strong><?php echo $data['od']??''; ?></strong></td>
       <td><?php echo $data['supplier']??''; ?></td>
       <td><?php echo $data['transporter']??''; ?></td>
       <td><?php echo $data['inspection']??''; ?></td>
@@ -139,7 +158,7 @@
       <td><?php echo $data['transit_time']??''; ?></td>
       <td><?php echo $phosphateModel->getEta($data['transit_time'],$data['bldate'])??''; ?></td>  
       <td><?php echo $data['bldate']??''; ?></td> 
-      <td><?php echo $phosphateModel->getMonth($data['bldate'])??''; ?></td>  
+      <td><?php echo $phosphateModel->getBlMonth($data['bldate'])??''; ?></td>  
       <td><?php echo $phosphateModel->getQuarter($data['bldate'])??''; ?></td>      
       <td><?php echo $phosphateModel->getYear($data['bldate'])??''; ?></td>      
       <td><?php echo $data['net_quantity']??''; ?></td>      
@@ -160,26 +179,32 @@
       <td><?php echo $data['jours_1']??''; ?></td>
       <td><?php echo $data['jours_2']??''; ?></td>  
       <td><?php echo $data['jours_3']??''; ?></td>  
-      <td><?php echo $phosphateModel->getMoisFacturation($data['clearance_date'])??''; ?></td>  
-
-
+      <td><?php echo $phosphateModel->getMoisFacturation($data['clearance_date'])??''; ?></td>
+      
+      
+     
+      
+           
      </tr>
      <?php
       }}else{ ?>
       <tr>
-        <td colspan="37">
+        <td colspan="17">
     <?php echo $fetchData; ?>
   </td>
     <tr>
     <?php
     }?>
-    </tbody>
-     </table>
-   </div>
+            </tbody>
+          </table>
+        </section>
+    </main>
+    
+    
+   
  
-</div>
 
-</div>
+
+
 </body>
 </html>
-

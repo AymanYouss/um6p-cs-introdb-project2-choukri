@@ -104,20 +104,16 @@ public function getPriceExw($price , $estimated_freight , $estimated_fob , $esti
 }
 }
 
-public function getBlMonth($bldate)
-{
-    $query = "SELECT MONTH($bldate) AS month FROM temporary_full_table";
-    $result = $this->connection->query($query);
 
-    if ($result && $result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $bl_month = $row['month'];
-        $result->free_result();
-        return $bl_month;
-    } else {
-        return null; 
+    public function getBlMonth($bldate)
+{
+    $month = date('F', strtotime($bldate));
+    return $month;
+      
+
 }
-}
+
+
 
 public function getBlQuarter($bldate)
 {
