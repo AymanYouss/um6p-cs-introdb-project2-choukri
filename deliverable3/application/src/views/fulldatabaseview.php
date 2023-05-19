@@ -40,6 +40,7 @@
     foreach($fetchData as $row){
       echo "<tr>";
       $counter = 0;
+      $arr =  array();
       foreach($row as $entry){
         if ($counter%2 == 0){
           echo "<td>$entry</td>";
