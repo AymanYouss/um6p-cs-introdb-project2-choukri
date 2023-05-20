@@ -331,8 +331,11 @@
   <label for="invoice">Invoice:</label>
   <input type="text" id="invoice" name="invoice">
 
-  <label for="Payment_status">Payment Status:</label>
-  <input type="text" id="Payment_status" name="Payment_status">
+  <label for="payment_status">Payment Status:</label>
+            <select id="payment_status" name="payment_status">
+                <option value="Paid">Paid</option>
+                <option value="Not Paid">Not Paid</option>
+            </select>
 
       <input type="submit" value="Submit">
 

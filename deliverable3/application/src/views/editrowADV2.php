@@ -166,8 +166,12 @@
 	<div class="container">
 		<h1>Edit a row (ADV)</h1>
 		<form action="../controllers/advEditor2.php" method="POST">
+		
+            <label for="od">Outbound Delivery:</label>
+            <?php 
+            echo "<input type='text' id='od' name='od' value='".$_SESSION["fetch_adv"][0]["od"]."'>";
+            ?>
 
-            
 			<label for="ac_status">Avis de Chargement Status:</label>
             <?php 
             echo "<input type='text' id='ac_status' name='ac_status' value='".$_SESSION["fetch_adv"][0]["ac_status"]."'>";
@@ -187,37 +191,7 @@
 			<?php echo "<input type='text' id='invoice' name='invoice' value='".$_SESSION["fetch_adv"][0]["invoice"]."'>";
 ?>
 
-			<label for="invoiced_amount">Invoiced Amount:</label>
-			<?php
-			 	if(is_array($fetchData)){      
-					foreach($fetchData as $data){
-				  		if ( $data["od"] == $_SESSION["fetch_adv"][0]["od"]) {
-					  		echo "<input type='text' id='invoiced_amount' name='invoiced_amount' value='".$phosphateUser->getInvoicedAmount($data["net_quantity"],$data["total_volume"])."'>";
-						}
-						
 
-				}
-			}
-			?>
-
-			
-
-
-	
-
-            <label for="payment_deadline">Payment Deadline:</label>
-            <?php
-			if(is_array($fetchData)){      
-				foreach($fetchData as $data){
-					  if ( $data["od"] == $_SESSION["fetch_adv"][0]["od"]) {
-						  echo "<input type='text' id='payment_deadline' name='payment_deadline' value='".$phosphateUser->getEta($data['payment_terms_days'],$data['bldate'])."'>";
-					}
-					
-
-			}
-		}
-    
-			?>
 
             <label for="payment_status">Payment Status:</label>
             <?php

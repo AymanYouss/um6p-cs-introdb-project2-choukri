@@ -66,7 +66,7 @@ public function getMonth($date)
 public function calculateNumberOfTc($total_volume,$volume_per_container)
 {
     try{
-        $res =  $total_volume / $volume_per_container;
+        $res =  (float)$total_volume / (float)$volume_per_container;
     }
     catch (DivisionByZeroError){
         return 0;

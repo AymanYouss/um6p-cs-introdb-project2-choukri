@@ -154,85 +154,112 @@
 		<form action="../controllers/salesEditor2.php" method="POST">
 
             
-			<label for="freight_invoice">Freight Invoice 1:</label>
-            <?php 
-            echo "<input type='text' id='freight_invoice' name='freight_invoice' value='".$_SESSION["fetch_sales"][0]["freight_invoice"]."'>";
-            ?>
-			
+    <label for="od">Outbound Delivery:</label>
+        <input type="text" id="od" name="od" value="<?php echo $_SESSION["fetch_sales"][0]["od"]; ?>">
 
-			<label for="freight_invoice_2">Freight Invoice 2:</label>
-			<?php 
-    echo "<input type='text' id='freight_invoice2' name='freight_invoice2' value='".$_SESSION["fetch_sales"][0]["freight_invoice2"]."'>";
+<label for="region">Region:</label>
+<?php 
+echo "<input type='text' id='region' name='region' value='".$_SESSION["fetch_sales"][0]["region"]."'>";
+?>
+
+<label for="tdate">Date:</label>
+<?php 
+echo "<input type='date' id='tdate' name='tdate' value='".$_SESSION["fetch_sales"][0]["tdate"]."'>";
 ?>
 
 
-			<label for="freight_invoice_3">Freight Invoice 3:</label>
-			<?php
-    echo "<input type='text' id='freight_invoice3' name='freight_invoice3' value='".$_SESSION["fetch_sales"][0]["freight_invoice3"]."'>";
+<label for="country">Country:</label>
+<?php 
+echo "<input type='text' id='country' name='country' value='".$_SESSION["fetch_sales"][0]["country"]."'>";
 ?>
 
-			<label for="sales_order">Sales order:</label>
-			<?php
-    echo "<input type='text' id='sales_order' name='sales_order' value='".$_SESSION["fetch_sales"][0]["sales_order"]."'>";
+<label for="discharging_port">Discharging Port:</label>
+<?php 
+echo "<input type='text' id='discharging_port' name='discharging_port' value='".$_SESSION["fetch_sales"][0]["discharging_port"]."'>";
 ?>
 
-			<label for="payment_terms">Payment terms:</label>
-			<?php
-    echo "<input type='text' id='payment_terms' name='payment_terms' value='".$_SESSION["fetch_sales"][0]["payment_terms"]."'>";
+<label for="delivery_mode">Delivery Mode:</label>
+<?php 
+echo "<input type='text' id='delivery_mode' name='delivery_mode' value='".$_SESSION["fetch_sales"][0]["delivery_mode"]."'>";
 ?>
 
-		
-
-            <label for="clearance_date">Clearance Date:</label>
-            <?php
-    echo "<input type='date' id='clearance_date' name='clearance_date' value='".$_SESSION["fetch_sales"][0]["clearance_date"]."'>";
+<label for="customer_name">Customer Name:</label>
+<?php 
+echo "<input type='text' id='customer_name' name='customer_name' value='".$_SESSION["fetch_sales"][0]["customer_name"]."'>";
 ?>
 
-            <label for="payment_terms_days">Payment Terms Days:</label>
-            <?php
-    echo "<input type='number' id='payment_terms_days' name='payment_terms_days' value='".$_SESSION["fetch_sales"][0]["payment_terms_days"]."'>";
+<label for="customer_group">Customer Group:</label>
+<?php 
+echo "<input type='text' id='customer_group' name='customer_group' value='".$_SESSION["fetch_sales"][0]["customer_group"]."'>";
 ?>
 
-            <label for="incoterm">Incoterm:</label>
-            <?php
-    echo "<input type='text' id='incoterm' name='incoterm' value='".$_SESSION["fetch_sales"][0]["incoterm"]."'>";
+<label for="category">Category:</label>
+<?php 
+echo "<input type='text' id='category' name='category' value='".$_SESSION["fetch_sales"][0]["category"]."'>";
 ?>
 
-            <label for="total_volume">Total Volume:</label>
-            <?php
-    echo "<input type='number' id='total_volume' name='total_volume' value='".$_SESSION["fetch_sales"][0]["total_volume"]."'>";
+<label for="pid">PID:</label>
+<?php 
+echo "<input type='text' id='pid' name='pid' value='".$_SESSION["fetch_sales"][0]["pid"]."'>";
 ?>
 
-            <label for="invoice">Invoice:</label>
-            <?php
-    echo "<input type='text' id='invoice' name='invoice' value='".$_SESSION["fetch_sales"][0]["invoice"]."'>";
+<label for="pallets">Pallets:</label>
+<?php 
+echo "<input type='text' id='pallets' name='pallets' value='".$_SESSION["fetch_sales"][0]["pallets"]."'>";
 ?>
 
-            <label for="userComment">User Comment:</label>
-            <?php
-    echo "<input type='text' id='userComment' name='userComment' value='".$_SESSION["fetch_sales"][0]["userComment"]."'>";
+<label for="branding">Branding:</label>
+<?php 
+echo "<input type='text' id='branding' name='branding' value='".$_SESSION["fetch_sales"][0]["branding"]."'>";
+?>
+
+<label for="total_volume">Total Volume:</label>
+<?php 
+echo "<input type='text' id='total_volume' name='total_volume' value='".$_SESSION["fetch_sales"][0]["total_volume"]."'>";
+?>
+
+<label for="volume_per_container">Volume per Container:</label>
+<?php 
+echo "<input type='text' id='volume_per_container' name='volume_per_container' value='".$_SESSION["fetch_sales"][0]["volume_per_container"]."'>";
 ?>
 
 
-            <label for="estimated_fob">Estimated FOB:</label>
-            <?php
-    echo "<input type='text' id='estimated_fob' name='estimated_fob' value='".$_SESSION["fetch_sales"][0]["estimated_fob"]."'>";
+
+<label for="incoterm">Incoterm:</label>
+<?php 
+echo "<input type='text' id='incoterm' name='incoterm' value='".$_SESSION["fetch_sales"][0]["incoterm"]."'>";
 ?>
 
-            <label for="real_fob">Real FOB:</label>
-            <?php
-    echo "<input type='text' id='real_fob' name='real_fob' value='".$_SESSION["fetch_sales"][0]["real_fob"]."'>";
+<label for="status1">Status 1:</label>
+<?php 
+echo "<input type='text' id='status1' name='status1' value='".$_SESSION["fetch_sales"][0]["status1"]."'>";
 ?>
 
-            <label for="tdate">Transaction Date:</label>
-            <?php
-    echo "<input type='date' id='tdate' name='tdate' value='".$_SESSION["fetch_sales"][0]["tdate"]."'>";
+<label for="status2">Status 2:</label>
+<?php 
+echo "<input type='text' id='status2' name='status2' value='".$_SESSION["fetch_sales"][0]["status2"]."'>";
 ?>
 
-            <label for="payment_status">Payment Status:</label>
-            <?php
-    echo "<input type='text' id='payment_status' name='payment_status' value='".$_SESSION["fetch_sales"][0]["payment_status"]."'>";
+<label for="payment_terms">Payment Terms:</label>
+<?php 
+echo "<input type='text' id='payment_terms' name='payment_terms' value='".$_SESSION["fetch_sales"][0]["payment_terms"]."'>";
 ?>
+
+<label for="payment_terms_days">Payment Terms Days:</label>
+<?php 
+echo "<input type='text' id='payment_terms_days' name='payment_terms_days' value='".$_SESSION["fetch_sales"][0]["payment_terms_days"]."'>";
+?>
+
+<label for="estimated_freight">Estimated Freight:</label>
+<?php 
+echo "<input type='text' id='estimated_freight' name='estimated_freight' value='".$_SESSION["fetch_sales"][0]["estimated_freight"]."'>";
+?>
+
+<label for="estimated_fob">Estimated FOB:</label>
+<?php 
+echo "<input type='text' id='estimated_fob' name='estimated_fob' value='".$_SESSION["fetch_sales"][0]["estimated_fob"]."'>";
+?>
+
 
       <input type="submit" value="Submit">
 

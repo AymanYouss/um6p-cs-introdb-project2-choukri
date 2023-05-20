@@ -117,10 +117,10 @@
       
       
       <?php
-      if (strstr($data['payment_status'],"Paid") && !(strstr($data['payment_status'],"Not")))
-        echo '<td ><p class="status paid">'.$data['payment_status'].'</p></td>';
+      if (strstr($data['payment_status'],"Paid") && !(strstr($data['payment_status'],"Not Paid")))
+        echo '<td ><p class="status paid">Paid</p></td>';
       else{
-        echo '<td ><p class="status notpaid">'.$data['payment_status'].'</p></td>';
+        echo '<td ><p class="status notpaid">Not Paid</p></td>';
 
       }
       ?>
