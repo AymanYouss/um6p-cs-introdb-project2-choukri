@@ -32,6 +32,13 @@
 			box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 		}
 
+		.pick{
+            position: relative;
+            z-index: 1;
+            padding: 15% 0 50px;
+            
+        }
+
 		h1 {
 			font-size: 24px;
 			text-align: center;
@@ -154,6 +161,7 @@
 	 
 	 ?>
 	
+	<section class="pick">
 	<div class="container">
 		<h1>Edit a row (ADV)</h1>
 		<form action="../controllers/advEditor2.php" method="POST">
@@ -221,6 +229,9 @@
 
             
 		</form>
+	
 	</div>
+	</section>
+	
 </body>
 </html>

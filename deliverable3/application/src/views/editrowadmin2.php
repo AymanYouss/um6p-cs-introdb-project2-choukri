@@ -353,3 +353,5 @@ include '../models/User.php';
 
 	</div>
 	</section>
+	</body>
+</html>
