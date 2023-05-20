@@ -93,7 +93,7 @@
     <link rel="stylesheet" href="../../assets/css/animate.css" />
     <link rel="stylesheet" href="../../assets/css/main.css" />
 </head>
-<header class="header">
+
   
     <!-- Place favicon.ico in the root directory -->
 
@@ -137,18 +137,18 @@
       </div>
       <!-- navbar area -->
       
-    </header>
-<body>
+    
+
 	<div class="container">
 		<h1>Edit a row (sales)</h1>
 		<form action="../controllers/salesEditor.php" method="POST">
 			<label for="od">Outbound delivery:</label>
 			<input type="text" id="od" name="od">
         
-			
+		
 
       <input type="submit" value="Submit">
-
+	</div>
 <?php 
 include '../models/User.php';
 ?>
