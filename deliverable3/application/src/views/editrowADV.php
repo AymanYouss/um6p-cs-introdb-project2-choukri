@@ -144,7 +144,7 @@
 		<h1>Edit a row (ADV)</h1>
 		<form action="../controllers/advEditor.php" method="POST">
 			<label for="od">Outbound delivery:</label>
-			<input type="text" id="od" name="od">
+			<input type="number" id="od" name="od" required>
         
 			
 
