@@ -1,9 +1,16 @@
 <?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+	if(!isset($_SESSION))
+	{
+		session_start();
+	}
+
+
+  if (!isset($_SESSION["role"])) {
+    include_once '../controllers/redirect.php';
+  }
 ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,7 +50,7 @@
                     </li>
               
                     <li class="nav-item">
-                        <a href="../controllers/logout.php" class="page-scroll">logout</a>
+                        <a href="../controllers/logout.php">logout</a>
                     </li>
                     
                   </ul>

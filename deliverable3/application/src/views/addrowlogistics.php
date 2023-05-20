@@ -1,9 +1,21 @@
+<?php
+	if(!isset($_SESSION))
+	{
+		session_start();
+	}
+
+
+  if (!isset($_SESSION) || $_SESSION["role"] != "logistics") {
+    include_once '../controllers/redirect.php';
+  }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>My Form</title>
+	<title>Add Row (logistics)</title>
 	<style>
 		body {
 			font-family: Arial, sans-serif;
@@ -114,7 +126,7 @@
                     </li>
               
                     <li class="nav-item">
-                        <a href="../controllers/logout.php" class="page-scroll">logout</a>
+                        <a href="../controllers/logout.php">logout</a>
                     </li>
                     
                   </ul>
@@ -135,7 +147,7 @@
 <body>
 	<section class="pick">
 	<div class="container">
-		<h1>My Form</h1>
+		<h1>Add a row (logistics)</h1>
 		<form action="../controllers/logisticsAdder.php" method="POST">
 			<label for="od">Outbound delivery:</label>
 			<input type="text" id="od" name="od">

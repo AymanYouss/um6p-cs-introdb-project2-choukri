@@ -1,13 +1,22 @@
-<?php 
-            session_start();
-            
-    ?>
+<?php
+	if(!isset($_SESSION))
+	{
+		session_start();
+	}
+
+
+  if (!isset($_SESSION) || $_SESSION["role"] != "adv") {
+    include_once '../controllers/redirect.php';
+  }
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>My Form</title>
+	<title>Edit Row (ADV)</title>
 	<style>
 		body {
 			font-family: Arial, sans-serif;
@@ -146,7 +155,7 @@
 	 ?>
 	
 	<div class="container">
-		<h1>My Form</h1>
+		<h1>Edit a row (ADV)</h1>
 		<form action="../controllers/advEditor2.php" method="POST">
 
             

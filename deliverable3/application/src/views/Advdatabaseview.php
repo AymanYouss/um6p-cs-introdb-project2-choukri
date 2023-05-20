@@ -1,9 +1,15 @@
 <?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+	if(!isset($_SESSION))
+	{
+		session_start();
+	}
+
+
+  if (!isset($_SESSION) || $_SESSION["role"] != "adv") {
+    include_once '../controllers/redirect.php';
+  }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +19,7 @@
     <link rel="stylesheet" href="../../assets/css/LineIcons.2.0.css" />
     <link rel="stylesheet" href="../../assets/css/animate.css" />
     <link rel="stylesheet" href="../../assets/css/main.css" />
+    <title>ADV Database view</title>
 </head>
 <header class="header">
   
@@ -37,10 +44,10 @@
                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                   <ul id="nav" class="navbar-nav ml-auto">
                     <li class="nav-item">
-                      <a class="page-scroll" href="#home">Home</a>
+                      <a class="page-scroll" href="../controllers/redirect.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../controllers/logout.php" class="page-scroll">logout</a>
+                        <a href="../controllers/logout.php">logout</a>
                     </li>
                     
                   </ul>

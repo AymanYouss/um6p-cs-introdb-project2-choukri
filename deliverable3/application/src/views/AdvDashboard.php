@@ -1,10 +1,21 @@
+<?php
+	if(!isset($_SESSION))
+	{
+		session_start();
+	}
+
+
+  if (!isset($_SESSION) || $_SESSION["role"] != "adv") {
+    include_once '../controllers/redirect.php';
+  }
+?>
 
 <!DOCTYPE html>
 <html class="no-js" lang="">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Sales Dashboard</title>
+    <title>ADV Dashboard</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon.svg"/>
@@ -62,7 +73,7 @@
                       <a class="page-scroll" href="#tracking" id="abt" onmouseover="showabt1()" onmouseout="showabt()">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../controllers/logout.php" class="page-scroll">logout</a>
+                        <a href="../controllers/logout.php">logout</a>
                     </li>
                     
                   </ul>

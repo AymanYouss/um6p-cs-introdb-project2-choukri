@@ -1,9 +1,21 @@
+<?php
+	if(!isset($_SESSION))
+	{
+		session_start();
+	}
+
+
+  if (!isset($_SESSION) || $_SESSION["role"] != "admin") {
+    include_once '../controllers/redirect.php';
+  }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Add Row</title>
+	<title>Add Row (admin)</title>
 	<style>
 		body {
 			font-family: Arial, sans-serif;
@@ -18,6 +30,7 @@
 			background-color: #fff;
 			border-radius: 5px;
 			box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      
 		}
 
         .pick{
@@ -118,7 +131,7 @@
                   </li>
             
                   <li class="nav-item">
-                      <a href="../controllers/logout.php" class="page-scroll">logout</a>
+                    <a href="../controllers/logout.php">logout</a>
                   </li>
                   
                 </ul>
@@ -138,7 +151,7 @@
   </header>
   <section id="home" class="pick">
 	<div class="container">
-		<h1>My Form</h1>
+		<h1>Add a row (admin)</h1>
 		<form action="../controllers/adminAdder.php" method="POST">
 			<label for="od">Outbound delivery:</label>
 			<input type="text" id="od" name="od">

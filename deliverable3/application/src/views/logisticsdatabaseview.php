@@ -1,15 +1,13 @@
-
-
-
-
-
-
-
 <?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+	if(!isset($_SESSION))
+	{
+		session_start();
+	}
+
+
+  if (!isset($_SESSION) || $_SESSION["role"] != "logistics") {
+    include_once '../controllers/redirect.php';
+  }
 ?>
 
 <!DOCTYPE html>
@@ -45,16 +43,10 @@
                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                   <ul id="nav" class="navbar-nav ml-auto">
                     <li class="nav-item">
-                      <a class="page-scroll" href="#home">Home</a>
+                      <a class="page-scroll" href="../controllers/redirect.php">Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="#feature">Actions</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="#tracking" id="abt" onmouseover="showabt1()" onmouseout="showabt()">About us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../controllers/logout.php" class="page-scroll">logout</a>
+                        <a href="../controllers/logout.php">logout</a>
                     </li>
                     
                   </ul>
