@@ -1,7 +1,14 @@
 USE phosphateFeeds;
 DROP TABLE IF EXISTS temporary_full_table;
-
-
+/*
+The "Read Committed" isolation level is the appropriate choice for our data management project.
+In fact, there are many users who update the table from different departments and in different timestamps.
+Thus, we need an isolation level which balances between data consistency and concurrency by allowing concurrent transactions to read 
+ committed data. This level prevents dirty reads, maintains data integrity, and provides granular privilege 
+ control. With "Read Committed," transactions operate independently, improving performance by avoiding excessive locking and enabling 
+ multiple users to read simultaneously. Overall, it meets perfectly our project's requirements.
+*/
+SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED;
 CREATE TABLE temporary_full_table (
 	region VARCHAR(255),
     tdate DATE,
