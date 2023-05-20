@@ -189,20 +189,11 @@
             <label for="transit_time">Transit Time:</label>
             <input type="number" id="transit_time" name="transit_time">
 
-			<label for="eta">>ETA(Estimated Time of Arrival):</label>
-            <input type="date" id="eta" name="eta">
-
+			
 			<label for="bldate">BL date estimated:</label>
             <input type="date" id="bldate" name="bldate">
 
-			<label for="blmonth">BL Month:</label>
-            <input type="text" id="blmonth" name="blmonth">
-
-			<label for="blquarter">BL Quarter:</label>
-            <input type="text" id="blquarter" name="blquarter">
-
-			<label for="blyear">BL Year:</label>
-            <input type="text" id="blyear" name="blyear">
+	
 
 			<label for="net_quantity">Net Quantity:</label>
             <input type="number" id="net_quantity" name="net_quantity">
@@ -260,9 +251,7 @@
 
 			<label for="jours_3">3 Jours:</label>
             <input type="number" id="jours_3" name="jours_3">
-
-			<label for="mois_facturation">Mois de facturation:</label>
-            <input type="date" id="mois_facturation" name="mois_facturation">
+*
 
       <input type="submit" value="Submit">
 	</div>
