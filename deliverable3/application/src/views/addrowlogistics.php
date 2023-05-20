@@ -171,8 +171,8 @@
             <label for="loading_date_at_plant">Loading date at plant</label>
             <input type="date" id="loading_date_at_plant" name="loading_date_at_plant">
 
-            <label for="quantity_removed_from_site">Quantity removed from the site</label>
-            <input type="number" id="quantity_removed_from_site" name="quantity_removed_from_site">
+            <label for="quantity_removed_from_the_site">Quantity removed from the site</label>
+            <input type="number" id="quantity_removed_from_the_site" name="quantity_removed_from_the_site">
 
             <label for="stuffing_date">Stuffing date:</label>
             <input type="date" id="stuffing_date" name="stuffing_date">

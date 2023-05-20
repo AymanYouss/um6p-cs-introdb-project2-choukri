@@ -151,9 +151,11 @@
 	<div class="container">
 		<h1>Edit a row (logistics)</h1>
 		<form action="../controllers/logisticsEditor2.php" method="POST">
+      
 
             <label for="supplier">Supplier</label>
             <?php 
+
             echo "<input type='text' id='supplier' name='supplier' value='".$_SESSION["fetch_logistics"][0]["supplier"]."'>";
             ?>
             <label for="transporter">Transporter</label>
@@ -176,9 +178,9 @@
             <?php 
             echo "<input type='date' id='loading_date_at_plant' name='loading_date_at_plant' value='".$_SESSION["fetch_logistics"][0]["loading_date_at_plant"]."'>";
             ?>
-            <label for="quantity_removed_from_site">Quantity removed from the site:</label>
+            <label for="quantity_removed_from_the_site">Quantity removed from the site:</label>
             <?php 
-            echo "<input type='number' id='quantity_removed_from_site' name='quantity_removed_from_site' value='".$_SESSION["fetch_logistics"][0]["quantity_removed_from_site"]."'>";
+            echo "<input type='number' id='quantity_removed_from_the_site' name='quantity_removed_from_the_site' value='".$_SESSION["fetch_logistics"][0]["quantity_removed_from_the_site"]."'>";
             ?>
             <label for="stuffing_date">Stuffing date:</label>
             <?php 
@@ -200,26 +202,12 @@
             <?php 
             echo "<input type='numebr' id='transit_time' name='transit_time' value='".$_SESSION["fetch_logistics"][0]["transit_time"]."'>";
             ?>
-            <label for="eta">ETA(Estimated Time of Arrival)::</label>
-            <?php 
-            echo "<input type='date' id='eta' name='stuffingeta_date' value='".$_SESSION["fetch_logistics"][0]["eta"]."'>";
-            ?>
+            
             <label for="bldate">BL date estimated::</label>
             <?php 
             echo "<input type='date' id='bldate' name='bldate' value='".$_SESSION["fetch_logistics"][0]["bldate"]."'>";
             ?>
-            <label for="blmonth">BL Month:</label>
-            <?php 
-            echo "<input type='text' id='blmonth' name='blmonth' value='".$_SESSION["fetch_logistics"][0]["blmonth"]."'>";
-            ?>
-            <label for="blquarter">BL Quarter:</label>
-            <?php 
-            echo "<input type='text' id='blquarter' name='blquarter' value='".$_SESSION["fetch_logistics"][0]["blquarter"]."'>";
-            ?>
-            <label for="blyear">BL Year:</label>
-            <?php 
-            echo "<input type='text' id='blyear' name='blyear' value='".$_SESSION["fetch_logistics"][0]["blyear"]."'>";
-            ?>
+            
             <label for="net_quantity">Net Quantity:</label>
             <?php 
             echo "<input type='number' id='net_quantity' name='net_quantity' value='".$_SESSION["fetch_logistics"][0]["net_quantity"]."'>";
@@ -274,25 +262,22 @@
             ?>
             <label for="jours_half">1/2 Jours:</label>
             <?php
-            echo "<input type='text' id='jours_half' name='jours_half' value='".$_SESSION["fetch_sales"][0]["jours_half"]."'>";
+            echo "<input type='text' id='jours_half' name='jours_half' value='".$_SESSION["fetch_logistics"][0]["jours_half"]."'>";
             ?>
             <label for="jours_1">1 Jours:</label>
             <?php
-            echo "<input type='text' id='jours_1' name='jours_1' value='".$_SESSION["fetch_sales"][0]["jours_1"]."'>";
+            echo "<input type='text' id='jours_1' name='jours_1' value='".$_SESSION["fetch_logistics"][0]["jours_1"]."'>";
             ?>            
             <label for="jours_2">2 Jours:</label>
             <?php
-            echo "<input type='text' id='jours_2' name='jours_2' value='".$_SESSION["fetch_sales"][0]["jours_2"]."'>";
+            echo "<input type='text' id='jours_2' name='jours_2' value='".$_SESSION["fetch_logistics"][0]["jours_2"]."'>";
             ?>
             <label for="jours_half">3 Jours:</label>
             <?php
-            echo "<input type='text' id='jours_3' name='jours_3' value='".$_SESSION["fetch_sales"][0]["jours_3"]."'>";
+            echo "<input type='text' id='jours_3' name='jours_3' value='".$_SESSION["fetch_logistics"][0]["jours_3"]."'>";
             ?>
             
-            <label for="mois_facturation">Mois de facturation:</label>
-            <?php
-            echo "<input type='date' id='mois_facturation' name='mois_facturation' value='".$_SESSION["fetch_sales"][0]["mois_facturation"]."'>";
-            ?>
+            
 
 
 
