@@ -63,5 +63,5 @@ $query->execute([
     'od' => $_POST["od"]
 ]);
 
-header("Location: /src/views/salesdatabaseview.php");
+header("Location: ../views/salesdatabaseview.php");
 ?>

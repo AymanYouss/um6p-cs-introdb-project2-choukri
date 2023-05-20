@@ -11,7 +11,7 @@ require '../dbconfig.php';
     ]);
 
     
-    header("Location: /src/views/fulldatabaseview.php");
+    header("Location: ../views/fulldatabaseview.php");
 
 
 
