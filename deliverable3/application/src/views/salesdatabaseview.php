@@ -27,7 +27,7 @@
           <div class="row align-items-center">
             <div class="col-lg-12">
               <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="../../index.php">
+                <a class="navbar-brand" href="index.html">
                   <img src="../../assets/img/logo/lg.webp" style="width:80%" alt="Logo" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +43,7 @@
                     </li>
               
                     <li class="nav-item">
-                        <a href="../controllers/logout.php">logout</a>
+                        <a href="../controllers/logout.php" class="page-scroll">logout</a>
                     </li>
                     
                   </ul>
@@ -62,39 +62,48 @@
       
     </header>
 <body>
-<div class="container">
+<main class="table">
+        <section class="table__header">
+            <h1>Sales </h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                
+          
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                    <th>Outbound delivery</th>
+                    <th>Region</th>
+                    <th>Tdate</th>
+                    <th>Quarter</th>
+                    <th>Year</th>
+                    <th>Country</th>
+                    <th>Discharching port</th>
+                    <th>Delivery Mode</th>
+                    <th>Customer name</th>
+                    <th>Customer group</th>
+                    <th>Category</th>
+                    <th>Pid</th>
+                    <th>Pallets</th>
+                    <th>Branding</th>
+                    <th>Total volume </th>
+                    <th>Volume per container</th>
+                    <th>Number of tc</th>
+                    <th>Incoterm</th>
+                    <th>Status 1</th>
+                    <th>Status 2</th>
+                    <th>Payment Terms</th>
+                    <th>Payment Terms Days </th>
+                    <th>EStimated Freight</th>
+                    <th>Estimated FOB</th>
+                </tr>
+            </thead>
 
-   <div class="">
-    
-    <div class="table-responsive">
-      <table class="table table-bordered">
-       <thead>
-        <th>Outbound delivery</th>
-        <th>Region</th>
-        <th>Tdate</th>
-        <th>Quarter</th>
-        <th>Year</th>
-        <th>Country</th>
-        <th>Discharching port</th>
-        <th>Delivery Mode</th>
-        <th>Customer name</th>
-        <th>Customer group</th>
-        <th>Category</th>
-        <th>Pid</th>
-        <th>Pallets</th>
-        <th>Branding</th>
-        <th>Total volume </th>
-        <th>Volume per container</th>
-        <th>Number of tc</th>
-        <th>Incoterm</th>
-        <th>Status 1</th>
-        <th>Status 2</th>
-        <th>Payment Terms</th>
-        <th>Payment Terms Days </th>
-        <th>EStimated Freight</th>
-        <th>Estimated FOB</th>
-    </thead>
     <tbody>
+
+
     <?php
     //Create new user (just for testing , the user will be in the session array)
     require '../dbconfig.php';
@@ -110,7 +119,7 @@
       foreach($fetchData as $data){
     ?>
       <tr>
-      <td><?php echo $data['od']??''; ?></td>
+      <td><strong><?php echo $data['od']??''; ?></strong></td>
       <td><?php echo $data['region']??''; ?></td>
       <td><?php echo $data['tdate']??''; ?></td>
       <td><?php echo $phosphateModel->getQuarter($data['tdate'])??''; ?></td>
@@ -139,7 +148,7 @@
      <?php
       }}else{ ?>
       <tr>
-        <td colspan="24">
+        <td colspan="17">
     <?php echo $fetchData; ?>
   </td>
     <tr>
