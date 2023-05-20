@@ -33,6 +33,9 @@ class PhosphateQueries
 
 public function getYear($date)
 {
+    if (empty($date)){
+        return "";
+    }
 
     $datetime = DateTime::createFromFormat('Y-m-d', $date);
     $a = $datetime->format('Y');
@@ -46,6 +49,9 @@ public function getYear($date)
 
 public function getMonth($date)
 {
+    if (empty($date)){
+        return "";
+    }
 
     $datetime = DateTime::createFromFormat('Y-m-d', $date);
     $a = $datetime->format('m');
@@ -175,6 +181,9 @@ public function getPaymentDeadline($bldate, $payment_terms_days)
         
     }
     public function getEta($transit_time,$bldate){
+        if (empty($bldate)){
+            return "";
+        }
         $numer = (string) $transit_time;
         
         return date('Y-m-d', strtotime($bldate. ' + '.$numer.' days'));
