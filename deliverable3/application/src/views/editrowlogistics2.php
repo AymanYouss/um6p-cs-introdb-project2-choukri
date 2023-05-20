@@ -152,7 +152,8 @@
 	<div class="container">
 		<h1>Edit a row (logistics)</h1>
 		<form action="../controllers/logisticsEditor2.php" method="POST">
-      
+        <label for="od">Outbound Delivery:</label>
+        <input type="text" id="od" name="od" value="<?php echo $_SESSION["fetch_logistics"][0]["od"]; ?>">
 
             <label for="supplier">Supplier</label>
             <?php 
@@ -175,6 +176,10 @@
             <?php 
             echo "<input type='text' id='shipped_via' name='shipped_via' value='".$_SESSION["fetch_logistics"][0]["shipped_via"]."'>";
             ?>
+
+            <label for="clearance_date">Clearance date:</label>
+            <input type="date" id="clearance_date" name="clearance_date" value="<?php echo $_SESSION["fetch_logistics"][0]["clearance_date"]; ?>">
+            
             <label for="loading_date_at_plant">Loading date at plant:</label>
             <?php 
             echo "<input type='date' id='loading_date_at_plant' name='loading_date_at_plant' value='".$_SESSION["fetch_logistics"][0]["loading_date_at_plant"]."'>";

@@ -113,9 +113,8 @@
       echo "<tr>";
       $counter = 0;
       $arr =  array();
-      //print_r($row);
-      foreach($row as $entry){
-        if ($counter%2 == 0 && $counter != 58){
+      foreach($row as $k => $entry){
+        if (!is_numeric($k) & $k != "payment_status"){
           echo "<td>$entry</td>";
           
         }
