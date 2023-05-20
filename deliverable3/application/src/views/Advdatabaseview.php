@@ -69,7 +69,7 @@
 <body>
 <main class="table">
         <section class="table__header">
-            <h1>Avis de chargement </h1>
+            <h1>Administrateurs De Vente </h1>
             <div class="input-group">
                 <input type="search" placeholder="Search Data...">
                 

@@ -1,13 +1,12 @@
 DELIMITER //
 
--- this procedure returns the transport id where the weight of product was higher than the specified weight in tons
+-- this procedure returns the username of the user with the id passed as parameter
 
-CREATE PROCEDURE GetTransportHigherThan(IN weightInTons INT)
+CREATE PROCEDURE WelcomeProcedure(IN userid INT)
 BEGIN
-    SELECT T.transportid
-    FROM Transports T
-    JOIN Product P ON T.pid = P.pid
-    WHERE P.weight > weightInTons;
+    SELECT U.username
+    FROM user_credentials U
+    WHERE U.userid = userid;
 END //
 
 DELIMITER ;

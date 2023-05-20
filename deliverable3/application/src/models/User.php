@@ -14,6 +14,7 @@
         if ($user && password_verify($password, $user["upassword"])) {
             //pass arguments to session in user variable
             $_SESSION["user"]=$user;
+            $_SESSION["userid"]=$user["userid"];
             $_SESSION["role"]=$user["urole"];
             return true;
         }
@@ -160,9 +161,14 @@
          
     }
 
-    
-
-    //if adding a functionality, public function etc..
+    public function getUsernameFromId($id) {
+        $query = $this->connection->prepare("CALL WelcomeProcedure(:id)");
+        $query->execute([
+            "id" => $id
+        ]);
+        $theUserId = $query->fetch();
+        echo "<h1 class='wow fadeInUp' data-wow-delay='.2s'>Welcome back $theUserId[0] </h1>";
+    }
     
 }
 ?>

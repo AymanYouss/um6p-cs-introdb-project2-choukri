@@ -103,14 +103,14 @@
           <div class="col-lg-6">
             <div class="hero-content">
               <h1 class="wow fadeInUp" data-wow-delay=".2s">
-								ADV Dashboard
+								<?php include_once '../controllers/username_getter.php'?>
 							</h1>
               <p class="wow fadeInUp" data-wow-delay=".4s">
-                Add, modify, delete rows and entries in the ADV(avis de chargement) table.
+                Add, modify, delete rows and entries in the ADV(Administrateurs De Vente) table.
               </p>
               <div class="hero-btns">
 								<a href="fulldatabaseview.php" class="main-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Database Overview</a>
-								<a href="#feature" class="main-btn border-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Edit an ADV(avis de chargement)</a>
+								<a href="#feature" class="main-btn border-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Edit an ADV(Administrateurs De Vente)</a>
 							</div>
             </div>
 					</div>
@@ -133,7 +133,7 @@
 					<div class="col-xxl-5 col-xl-6 col-lg-7">
 						<div class="section-title text-center mb-30">
 							<h1 class="mb-25 wow fadeInUp" data-wow-delay=".2s">Choose Action</h1>
-							<p class="wow fadeInUp" data-wow-delay=".4s">You can either add & edit rows, and take a look at the ADV(avis de chargement) table</p>
+							<p class="wow fadeInUp" data-wow-delay=".4s">You can either add & edit rows, and take a look at the ADV(Administrateurs De Vente) table</p>
 						</div>
 					</div>
 				</div>
@@ -146,7 +146,7 @@
 							</div>
 							<div class="content">
 								<h3>Add a row</h3>
-								<p>You can conveniently fill in all the relevant information to enrich the ADV(avis de chargement) table with valuable data !</p>
+								<p>You can conveniently fill in all the relevant information to enrich the ADV(Administrateurs De Vente) table with valuable data !</p>
 							</div>
 						</div>
 					</div>
@@ -157,7 +157,7 @@
 							</div>
 							<div class="content">
 								<h3>Edit a row</h3>
-								<p>You can update the ADV(avis de chargement) table with new information, enabling you to refine any existing row !</p>
+								<p>You can update the ADV(Administrateurs De Vente) table with new information, enabling you to refine any existing row !</p>
 							</div>
 						</div>
 					</div>

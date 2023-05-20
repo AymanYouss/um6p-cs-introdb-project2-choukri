@@ -103,7 +103,7 @@
           <div class="col-lg-6">
             <div class="hero-content">
               <h1 class="wow fadeInUp" data-wow-delay=".2s">
-								Logistics Dashboard
+              <?php include_once '../controllers/username_getter.php'?>
 							</h1>
               <p class="wow fadeInUp" data-wow-delay=".4s">
                 Add, modify, delete rows and entries in the logistics table.
