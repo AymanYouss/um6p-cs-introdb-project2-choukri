@@ -9,8 +9,8 @@ body{
     
 
     display: flex;
-    background: url(/application/assets/img/OCP-logo.jpg) center / cover;
-    background-size: 1000px 500px;
+    
+    background-size: 500px auto;
     background-repeat: no-repeat;
     justify-content: center;
     align-items: center;
