@@ -16,7 +16,7 @@ $query = $conn->prepare("UPDATE temporary_full_table
     $query->execute([
         
     ]);
-    header("Location: /src/views/Advdatabaseview.php");
+    header("Location: ../views/Advdatabaseview.php");
 
 
 

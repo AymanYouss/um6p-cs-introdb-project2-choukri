@@ -92,6 +92,7 @@
     <link rel="stylesheet" href="../../assets/css/LineIcons.2.0.css" />
     <link rel="stylesheet" href="../../assets/css/animate.css" />
     <link rel="stylesheet" href="../../assets/css/main.css" />
+	<?php include 'head.html' ?>
 </head>
 <header class="header">
   
@@ -143,7 +144,7 @@
 		<h1>Edit a row (admin)</h1>
 		<form action="../controllers/adminEditor.php" method="POST">
 			<label for="od">Outbound delivery:</label>
-			<input type="text" id="od" name="od">
+			<input type="number" id="od" name="od" required>
         
 			
 

@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../../assets/css/animate.css" />
     <link rel="stylesheet" href="../../assets/css/main.css" />
     <title>ADV Database view</title>
+    <?php include 'head.html' ?>
 </head>
 <header class="header">
   

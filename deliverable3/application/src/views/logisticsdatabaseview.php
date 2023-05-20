@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../../assets/css/LineIcons.2.0.css" />
     <link rel="stylesheet" href="../../assets/css/animate.css" />
     <link rel="stylesheet" href="../../assets/css/main.css" />
+    <?php include 'head.html' ?>
 </head>
 <header class="header">
   

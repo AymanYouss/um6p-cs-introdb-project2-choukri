@@ -46,5 +46,5 @@ $query->execute([
   'jours_3' => $_POST["jours_3"]
 ]);
 
-header("Location: /src/views/logisticsdatabaseview.php");
+header("Location: ../views/logisticsdatabaseview.php");
 ?>
