@@ -49,7 +49,26 @@
     }
     
     public function selectSales(){
-        $query = $this->connection->prepare("SELECT t.od, t.freight_invoice, t.freight_invoice2, t.freight_invoice3, t.sales_order, t.payment_terms, t.clearance_date, t.payment_terms_days, t.incoterm, t.total_volume, t.invoice, t.userComment, t.estimated_fob, t.real_fob, t.tdate, t.payment_status FROM temporary_full_table AS t");
+        $query = $this->connection->prepare("SELECT t.od,t.region,
+        t.tdate,
+        t.country,
+        t.discharging_port,
+        t.delivery_mode,
+        t.customer_name,
+        t.customer_group,
+        t.category,
+        t.pid,
+        t.pallets,
+        t.branding,
+        t.total_volume,
+        t.volume_per_container,
+        t.incoterm,
+        t.status1,
+        t.status2,
+        t.payment_terms,
+        t.payment_terms_days,
+        t.estimated_freight,
+        t.estimated_fob FROM temporary_full_table AS t");
         
         $query->execute([
         
@@ -58,7 +77,26 @@
     }
 
     public function selectSalesOd($od){
-        $query = $this->connection->prepare("SELECT t.od, t.freight_invoice, t.freight_invoice2, t.freight_invoice3, t.sales_order, t.payment_terms, t.clearance_date, t.payment_terms_days, t.incoterm, t.total_volume, t.invoice, t.userComment, t.estimated_fob, t.real_fob, t.tdate, t.payment_status FROM temporary_full_table AS t WHERE od = $od");
+        $query = $this->connection->prepare("SELECT t.od,t.region,
+        t.tdate,
+        t.country,
+        t.discharging_port,
+        t.delivery_mode,
+        t.customer_name,
+        t.customer_group,
+        t.category,
+        t.pid,
+        t.pallets,
+        t.branding,
+        t.total_volume,
+        t.volume_per_container,
+        t.incoterm,
+        t.status1,
+        t.status2,
+        t.payment_terms,
+        t.payment_terms_days,
+        t.estimated_freight,
+        t.estimated_fob  FROM temporary_full_table AS t WHERE od = $od");
         
         $query->execute([
             
@@ -66,7 +104,7 @@
         return $query->fetchAll() ;
     }
     public function selectADVod($od){
-        $query = $this->connection->prepare("SELECT t.od, t.ac_status, t.contract_id, t.contract_status, t.invoice, t.payment_status,t.net_quantity,t.total_volume FROM temporary_full_table AS t WHERE od = $od");
+        $query = $this->connection->prepare("SELECT t.od, t.ac_status, t.contract_id, t.contract_status, t.invoice, t.payment_status FROM temporary_full_table AS t WHERE od = $od");
         
         $query->execute([
             
@@ -102,7 +140,7 @@
         return $query->fetchAll() ;
     }
     public function selectAll(){
-        $query = $this->connection->prepare("SELECT * FROM temporary_full_table LIMIT 5");
+        $query = $this->connection->prepare("SELECT * FROM temporary_full_table");
         
         $query->execute([
         

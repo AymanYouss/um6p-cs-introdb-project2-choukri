@@ -120,10 +120,10 @@
         $counter++;
       }
       
-      if (strstr($row['payment_status'],"Paid") && !(strstr($row['payment_status'],"Not")))
-        echo '<td ><p class="status paid">'.$row['payment_status'].'</p></td>';
+      if (strstr($row['payment_status'],"Paid") && !(strstr($row['payment_status'],"Not Paid")))
+        echo '<td ><p class="status paid">Paid</p></td>';
       else{
-        echo '<td ><p class="status notpaid">'.$row['payment_status'].'</p></td>';
+        echo '<td ><p class="status notpaid">Not Paid</p></td>';
 
       }
       echo "<tr>";

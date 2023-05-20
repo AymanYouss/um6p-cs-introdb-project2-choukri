@@ -152,55 +152,71 @@
 			<label for="od">Outbound delivery:</label>
 			<input type="text" id="od" name="od">
 
-			<label for="freight_invoice">Freight Invoice 1:</label>
-			<input type="text" id="freight_invoice" name="freight_invoice">
+<label for="region">Region:</label>
+<input type="text" id="region" name="region">
 
-			<label for="freight_invoice_2">Freight Invoice 2:</label>
-			<input type="text" id="freight_invoice2" name="freight_invoice2">
+<label for="tdate">Date:</label>
+<input type="date" id="tdate" name="tdate">
 
-			<label for="freight_invoice_3">Freight Invoice 3:</label>
-			<input type="text" id="freight_invoice3" name="freight_invoice3">
+<label for="country">Country:</label>
+<input type="text" id="country" name="country">
 
-			<label for="sales_order">Sales order:</label>
-			<input type="text" id="sales_order" name="sales_order">
+<label for="discharging_port">Discharging Port:</label>
+<input type="text" id="discharging_port" name="discharging_port">
 
-			<label for="payment_terms">Payment terms:</label>
-			<input type="text" id="payment_terms" name="payment_terms">
+<label for="delivery_mode">Delivery Mode:</label>
+<input type="text" id="delivery_mode" name="delivery_mode">
 
-		
+<label for="customer_name">Customer Name:</label>
+<input type="text" id="customer_name" name="customer_name">
 
-            <label for="clearance_date">Clearance Date:</label>
-            <input type="date" id="clearance_date" name="clearance_date">
+<label for="customer_group">Customer Group:</label>
+<input type="text" id="customer_group" name="customer_group">
 
-            <label for="payment_terms_days">Payment Terms Days:</label>
-            <input type="number" id="payment_terms_days" name="payment_terms_days">
+<label for="category">Category:</label>
+<input type="text" id="category" name="category">
 
-            <label for="incoterm">Incoterm:</label>
-            <input type="text" id="incoterm" name="incoterm">
+<label for="pid">PID:</label>
+<input type="text" id="pid" name="pid">
 
-            <label for="total_volume">Total Volume:</label>
-            <input type="number" id="total_volume" name="total_volume">
+<label for="pallets">Pallets:</label>
+<input type="text" id="pallets" name="pallets">
 
-            <label for="invoice">Invoice:</label>
-            <input type="text" id="invoice" name="invoice">
+<label for="branding">Branding:</label>
+<input type="text" id="branding" name="branding">
 
-            <label for="userComment">User Comment:</label>
-            <input type="text" id="userComment" name="userComment">
+<label for="total_volume">Total Volume:</label>
+<input type="text" id="total_volume" name="total_volume">
 
-            <label for="estimated_fob">Estimated FOB:</label>
-            <input type="text" id="estimated_fob" name="estimated_fob">
+<label for="volume_per_container">Volume per Container:</label>
+<input type="text" id="volume_per_container" name="volume_per_container">
 
-            <label for="real_fob">Real FOB:</label>
-            <input type="text" id="real_fob" name="real_fob">
+<label for="incoterm">Incoterm:</label>
+<input type="text" id="incoterm" name="incoterm">
 
-            <label for="tdate">Transaction Date:</label>
-            <input type="date" id="tdate" name="tdate">
+<label for="status1">Status 1:</label>
+<input type="text" id="status1" name="status1">
+
+<label for="status2">Status 2:</label>
+<input type="text" id="status2" name="status2">
+
+<label for="payment_terms">Payment Terms:</label>
+<input type="text" id="payment_terms" name="payment_terms">
+
+<label for="payment_terms_days">Payment Terms Days:</label>
+<input type="text" id="payment_terms_days" name="payment_terms_days">
+
+<label for="estimated_freight">Estimated Freight:</label>
+<input type="text" id="estimated_freight" name="estimated_freight">
+
+<label for="estimated_fob">Estimated FOB:</label>
+<input type="text" id="estimated_fob" name="estimated_fob">
+
 
             <label for="payment_status">Payment Status:</label>
             <select id="payment_status" name="payment_status">
-                <option value="pending">Pending</option>
                 <option value="paid">Paid</option>
-                <option value="late">Late</option>
+                <option value="late">Not Paid</option>
             </select>
 
       <input type="submit" value="Submit">

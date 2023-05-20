@@ -163,24 +163,16 @@
 			<label for="invoice">Invoice:</label>
 			<input type="text" id="invoiced" name="invoiced">
 
-			<label for="invoiced_amount">Incoiced Amount:</label>
-			<input type="text" id="invoiced_amount" name="invoiced_amount">
 
-		
 
-            <label for="payment_deadline">Payment Deadline:</label>
-            <input type="date" id="payment_deadline" name="payment_deadline">
-
-            <label for="payment_status">Payment Status:</label>
-            <input type="number" id="payment_status" name="payment_status">
 
             
-            <!--<label for="payment_status">Payment Status:</label>
+            <label for="payment_status">Payment Status:</label>
             <select id="payment_status" name="payment_status">
-                <option value="pending">Pending</option>
-                <option value="paid">Paid</option>
-                <option value="late">Late</option>
-            </select>-->
+                <option value="Paid">Paid</option>
+                <option value="Not Paid">Not Paid</option>
+
+            </select>
 
       <input type="submit" value="Submit">
 	</div>
