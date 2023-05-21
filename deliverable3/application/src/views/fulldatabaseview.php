@@ -70,7 +70,8 @@
             <h1>Full Table </h1>
             <div class="input-group">
                 <input type="search" placeholder="Search Data...">
-                
+                <button onclick="exportToExcel()" class="btn btn-primary">Export to Excel</button>
+            </div>
           
         </section>
         <section class="table__body">
@@ -132,5 +133,12 @@
 
 </div>
   </main>
+
+  <script>
+    function exportToExcel() {
+        window.location.href = "export.php";
+    }
+  </script>
+  
 </body>
 </html>
