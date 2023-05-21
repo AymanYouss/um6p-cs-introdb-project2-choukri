@@ -24,23 +24,40 @@
     <link rel="stylesheet" href="../../assets/css/main.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <?php include 'head.html' ?>
-    <style>body{
+    <style>
+    body{
       display: flex;
       flex-direction: column;}
       .chartBox{
         width: 100%;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        gap:200px;
         flex-direction: row;
+        margin-top: 15%;
+        
     }
     .chartBox div{
-     width: 30%;
+     width: 100%;
      display: flex;
      justify-content: center;
      text-align: center;
      flex-direction: column;
      border-radius: 14%;
+     margin-bottom: 15%;
     }
+    .chartBox div.div2{
+     margin-right: 2%;
+    }
+    .chartH1{
+      margin-top: 5%;
+      position: absolute;
+      margin-left: 2%;
+
+      
+
+    }
+    
 
     .chartBox .div1:hover{
      transform: scale(1.05);
@@ -56,6 +73,20 @@
     .chartBox h3:hover{
       color: red;
     }
+    main.chart{
+    width: 82vw;
+    height: 106vh;
+    background-color: #fff5;
+    margin-top: 1%;
+
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+
+    overflow: hidden;
+    padding: 10px;
+    
+  }
     </style>
 </head>
 <header class="header">
@@ -109,13 +140,14 @@
 <section class="table__header">
             <h1>Full Table </h1>
             <div class="input-group">
-                <input type="search" placeholder="Search Data...">
+                <input type="search" id="search" placeholder="Search Data by OD...">
+                
                 <a href="../controllers/export.php">Export to csv</a>
             </div>
           
         </section>
         <section class="table__body">
-            <table>
+            <table id="table">
                 <thead>
                     <tr>
                     <?php 
@@ -149,14 +181,15 @@
       $counter = 0;
       $arr =  array();
       foreach($row as $k => $entry){
-        if (!is_numeric($k) & $k != "payment_status"){
+        if (!is_numeric($k) & $k != "Payment_status"){
           echo "<td>$entry</td>";
+          
           
         }
         $counter++;
       }
       
-      if (strstr($row['payment_status'],"Paid") && !(strstr($row['payment_status'],"Not Paid")))
+      if (strstr($row['Payment_status'],"Paid") && !(strstr($row['Payment_status'],"Not Paid")))
         echo '<td ><p class="status paid">Paid</p></td>';
       else{
         echo '<td ><p class="status notpaid">Not Paid</p></td>';
@@ -197,13 +230,13 @@
         $paid = array();
         $notpaid = array();
         while ($row = $result->fetch()){
-            if (strstr($row["payment_status"],"Paid") && !(strstr($row["payment_status"],"Not")))
+            if (strstr($row["Payment_status"],"Paid") && !(strstr($row["Payment_status"],"Not")))
             {
-                $paid[] = $row["payment_status"];
+                $paid[] = $row["Payment_status"];
 
             }
             else{
-                $notpaid[] = $row["payment_status"];
+                $notpaid[] = $row["Payment_status"];
             }
             
         }
@@ -221,18 +254,28 @@
       }
     
 ?>
-<div class="chartBox">
-  <div class="div1">
-    <h3>Countries Display</h3>
-    <canvas id="myChart"></canvas>
-  </div>
-  <div class="div2">
-    <h3>Paid Transactions</h3>
-    <canvas id="myChart2"></canvas>
-  </div>
+<main class="chart">
+    <h1 class="chartH1">Charts</h1>
+    <div class="chartBox">
+      
+  
+      <div class="div1">
+        <h3>Paid transactions</h3>
+        <canvas id="myChart"></canvas>
+      </div>
+      <div class="div2">
+        <h3>Countries Display</h3>
+        <canvas id="myChart2"></canvas>
+      </div>
   
   
-</div>
+    </div>
+
+</main>
+    
+
+
+
 
 <script>
     // Setup Block
@@ -303,7 +346,8 @@
         
    
 </script>
-
+<script src="/application/assets/js/search.js">
+</script>
 
  
 
