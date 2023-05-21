@@ -12,6 +12,7 @@
 //})
 
 //}
+console.log("test");
 var search = document.getElementById('search');
 search.addEventListener("keyup", function(){
     var keyword = this.value;
@@ -26,11 +27,11 @@ search.addEventListener("keyup", function(){
                 if(od_value == keyword || keyword == ""){
                     
                     all_tr[i].style.display = ""; // show
-                    //console.log("found")
+                    console.log("found")
                 }else{
                     all_tr[i].style.display = "none"; // hide
                     
-                    //console.log("not found")
+                    console.log("not found")
                 }
             }
         }

@@ -181,7 +181,7 @@
       $counter = 0;
       $arr =  array();
       foreach($row as $k => $entry){
-        if (!is_numeric($k) & $k != "Payment_status"){
+        if (!is_numeric($k) & $k != "payment_status"){
           echo "<td>$entry</td>";
           
           
@@ -189,7 +189,7 @@
         $counter++;
       }
       
-      if (strstr($row['Payment_status'],"Paid") && !(strstr($row['Payment_status'],"Not Paid")))
+      if (strstr($row['payment_status'],"Paid") && !(strstr($row['payment_status'],"Not Paid")))
         echo '<td ><p class="status paid">Paid</p></td>';
       else{
         echo '<td ><p class="status notpaid">Not Paid</p></td>';
@@ -230,13 +230,13 @@
         $paid = array();
         $notpaid = array();
         while ($row = $result->fetch()){
-            if (strstr($row["Payment_status"],"Paid") && !(strstr($row["Payment_status"],"Not")))
+            if (strstr($row["payment_status"],"Paid") && !(strstr($row["payment_status"],"Not")))
             {
-                $paid[] = $row["Payment_status"];
+                $paid[] = $row["payment_status"];
 
             }
             else{
-                $notpaid[] = $row["Payment_status"];
+                $notpaid[] = $row["payment_status"];
             }
             
         }
@@ -346,7 +346,7 @@
         
    
 </script>
-<script src="/application/assets/js/search.js">
+<script src="../../assets/js/search.js">
 </script>
 
  
