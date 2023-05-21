@@ -70,12 +70,12 @@
         <section class="table__header">
             <h1>Logistics </h1>
             <div class="input-group">
-                <input type="search" placeholder="Search Data...">
+                <input type="search"  id ="search" placeholder="Search Data by OD...">
                 
           
         </section>
         <section class="table__body">
-            <table>
+            <table id ="table">
                 <thead>
                     <tr>
                     <th>Outbound delivery</th>
@@ -203,4 +203,7 @@
 
 
 </body>
+</script>
+<script src="/application/assets/js/searchFirst.js">
+</script>
 </html>

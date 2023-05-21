@@ -71,12 +71,12 @@
         <section class="table__header">
             <h1>Administrateurs De Vente </h1>
             <div class="input-group">
-                <input type="search" placeholder="Search Data...">
+                <input type="search"  id = "search" placeholder="Search Data by OD...">
                 
           
         </section>
         <section class="table__body">
-            <table>
+            <table id="table">
                 <thead>
                     <tr>
                     <th>Outbound delivery</th>
@@ -131,15 +131,18 @@
       }}else{ ?>
       <tr>
         <td colspan="17">
-    <?php echo $fetchData; ?>
-  </td>
-    <tr>
+        <?php echo $fetchData; ?>
+        </td>
+      </tr>
     <?php
     }?>
             </tbody>
           </table>
         </section>
     </main>
+    
+  <script src="/application/assets/js/searchFirst.js">
+  </script>
     
     
    
