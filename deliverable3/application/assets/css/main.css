@@ -84,13 +84,13 @@ h6 {
   display: none;
   position: fixed;
   background-color: rgb(35, 65, 83);
-  height: 200px;
+  height: 250px;
   color: white;
   font-weight: 600;
   padding: 14px;
-  width: 30%;
+  width: 28%;
   margin-left: 70%;
-  
+  border-radius: 25px;
 }
 
 
