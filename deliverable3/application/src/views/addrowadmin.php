@@ -161,7 +161,7 @@
   <input type="text" id="region" name="region">
 
   <label for="tdate">Tdate:</label>
-  <input type="text" id="tdate" name="tdate">
+  <input type="date" id="tdate" name="tdate">
 
   <label for="country">Country:</label>
   <input type="text" id="country" name="country">
