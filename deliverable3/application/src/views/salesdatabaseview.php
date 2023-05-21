@@ -170,7 +170,7 @@
 
 </div>
 </script>
-<script src="/application/assets/js/searchFirst.js">
+<script src="../../assets/js/searchFirst.js">
 </script>
 </body>
 </html>
