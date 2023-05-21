@@ -1,9 +1,15 @@
 <?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+	if(!isset($_SESSION))
+	{
+		session_start();
+	}
+
+
+  if (!isset($_SESSION) || $_SESSION["role"] != "adv") {
+    include_once '../controllers/redirect.php';
+  }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +19,8 @@
     <link rel="stylesheet" href="../../assets/css/LineIcons.2.0.css" />
     <link rel="stylesheet" href="../../assets/css/animate.css" />
     <link rel="stylesheet" href="../../assets/css/main.css" />
+    <title>ADV Database view</title>
+    <?php include 'head.html' ?>
 </head>
 <header class="header">
   
@@ -25,7 +33,7 @@
           <div class="row align-items-center">
             <div class="col-lg-12">
               <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="../../index.php">
                   <img src="../../assets/img/logo/lg.webp" style="width:80%" alt="Logo" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,13 +45,10 @@
                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                   <ul id="nav" class="navbar-nav ml-auto">
                     <li class="nav-item">
-                      <a class="page-scroll" href="#home">Home</a>
+                      <a class="page-scroll" href="../controllers/redirect.php">Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="page-scroll" href="#feature">Actions</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="#tracking" id="abt" onmouseover="showabt1()" onmouseout="showabt()">About us</a>
+                        <a href="../controllers/logout.php">logout</a>
                     </li>
                     
                   </ul>
@@ -64,7 +69,7 @@
 <body>
 <main class="table">
         <section class="table__header">
-            <h1>Avis de chargement </h1>
+            <h1>Administrateurs De Vente </h1>
             <div class="input-group">
                 <input type="search" placeholder="Search Data...">
                 
@@ -112,10 +117,10 @@
       
       
       <?php
-      if (strstr($data['payment_status'],"Paid") && !(strstr($data['payment_status'],"Not")))
-        echo '<td ><p class="status paid">'.$data['payment_status'].'</p></td>';
+      if (strstr($data['payment_status'],"Paid") && !(strstr($data['payment_status'],"Not Paid")))
+        echo '<td ><p class="status paid">Paid</p></td>';
       else{
-        echo '<td ><p class="status notpaid">'.$data['payment_status'].'</p></td>';
+        echo '<td ><p class="status notpaid">Not Paid</p></td>';
 
       }
       ?>

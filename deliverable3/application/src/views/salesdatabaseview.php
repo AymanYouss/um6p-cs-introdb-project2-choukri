@@ -1,48 +1,117 @@
 <?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+	if(!isset($_SESSION))
+	{
+		session_start();
+	}
+
+
+  if (!isset($_SESSION) || $_SESSION["role"] != "sales") {
+    include_once '../controllers/redirect.php';
+  }
 ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
+  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/css/tables.css">
+  <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon.svg"/>
+    <link rel="stylesheet" href="../../assets/css/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="../../assets/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="../../assets/css/animate.css" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <?php include 'head.html' ?>
 </head>
-<body>
-<div class="container">
+<header class="header">
+  
+    <!-- Place favicon.ico in the root directory -->
 
-   <div class="">
+    <!-- ========================= CSS here ========================= -->
     
-    <div class="table-responsive">
-      <table class="table table-bordered">
-       <thead>
-        <th>Outbound delivery</th>
-        <th>Region</th>
-        <th>Tdate</th>
-        <th>Quarter</th>
-        <th>Year</th>
-        <th>Country</th>
-        <th>Discharching port</th>
-        <th>Delivery Mode</th>
-        <th>Customer name</th>
-        <th>Customer group</th>
-        <th>Category</th>
-        <th>Pid</th>
-        <th>Pallets</th>
-        <th>Branding</th>
-        <th>Total volume </th>
-        <th>Volume per container</th>
-        <th>Number of tc</th>
-        <th>Incoterm</th>
-        <th>Status 1</th>
-        <th>Status 2</th>
-        <th>Payment Terms</th>
-        <th>Payment Terms Days </th>
-        <th>EStimated Freight</th>
-        <th>Estimated FOB</th>
-    </thead>
+      <div class="navbar-area">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="index.html">
+                  <img src="../../assets/img/logo/lg.webp" style="width:80%" alt="Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                  <ul id="nav" class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="page-scroll" href="../controllers/redirect.php">Home</a>
+                    </li>
+              
+                    <li class="nav-item">
+                        <a href="../controllers/logout.php" class="page-scroll">logout</a>
+                    </li>
+                    
+                  </ul>
+                </div>
+                
+                <!-- navbar collapse -->
+              </nav>
+              <!-- navbar -->
+            </div>
+          </div>
+          <!-- row -->
+        </div>
+        <!-- container -->
+      </div>
+      <!-- navbar area -->
+      
+    </header>
+<body>
+<main class="table">
+        <section class="table__header">
+            <h1>Sales </h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                
+          
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                    <th>Outbound delivery</th>
+                    <th>Region</th>
+                    <th>Tdate</th>
+                    <th>Quarter</th>
+                    <th>Year</th>
+                    <th>Country</th>
+                    <th>Discharching port</th>
+                    <th>Delivery Mode</th>
+                    <th>Customer name</th>
+                    <th>Customer group</th>
+                    <th>Category</th>
+                    <th>Pid</th>
+                    <th>Pallets</th>
+                    <th>Branding</th>
+                    <th>Total volume </th>
+                    <th>Volume per container</th>
+                    <th>Number of tc</th>
+                    <th>Incoterm</th>
+                    <th>Status 1</th>
+                    <th>Status 2</th>
+                    <th>Payment Terms</th>
+                    <th>Payment Terms Days </th>
+                    <th>EStimated Freight</th>
+                    <th>Estimated FOB</th>
+                </tr>
+            </thead>
+
     <tbody>
+
+
     <?php
     //Create new user (just for testing , the user will be in the session array)
     require '../dbconfig.php';
@@ -58,7 +127,7 @@
       foreach($fetchData as $data){
     ?>
       <tr>
-      <td><?php echo $data['od']??''; ?></td>
+      <td><strong><?php echo $data['od']??''; ?></strong></td>
       <td><?php echo $data['region']??''; ?></td>
       <td><?php echo $data['tdate']??''; ?></td>
       <td><?php echo $phosphateModel->getQuarter($data['tdate'])??''; ?></td>
@@ -87,7 +156,7 @@
      <?php
       }}else{ ?>
       <tr>
-        <td colspan="24">
+        <td colspan="17">
     <?php echo $fetchData; ?>
   </td>
     <tr>

@@ -3,6 +3,10 @@
 	{
 		session_start();
 	}
+	
+	if (isset($_SESSION["role"])) {
+		include_once '../controllers/redirect.php';
+	  }
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +23,7 @@
 <body>
 	<div class="main">
 		<input type="checkbox" id="chk" aria-hidden="true">
+			<img src="../../assets/img/OCP-transaprent.png" alt="Transparent Image" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: auto; z-index: -1;">
 			<div class="signup">
 				<form action="../controllers/RegistrationController.php" method="post">
 					<label for="chk" aria-hidden="true">Register</label>

@@ -1,9 +1,21 @@
+<?php
+	if(!isset($_SESSION))
+	{
+		session_start();
+	}
+
+
+  if (!isset($_SESSION) || $_SESSION["role"] != "logistics") {
+    include_once '../controllers/redirect.php';
+  }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>My Form</title>
+	<title>Add Row (logistics)</title>
 	<style>
 		body {
 			font-family: Arial, sans-serif;
@@ -18,6 +30,12 @@
 			border-radius: 5px;
 			box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 		}
+		.pick{
+            position: relative;
+            z-index: 1;
+            padding: 15% 0 50px;
+            
+        }
 
 		h1 {
 			font-size: 24px;
@@ -73,10 +91,64 @@
 			}
 		}
 	</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/css/tables.css">
+  <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon.svg"/>
+    <link rel="stylesheet" href="../../assets/css/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="../../assets/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="../../assets/css/animate.css" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+	<?php include 'head.html' ?>
 </head>
+<header class="header">
+  
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- ========================= CSS here ========================= -->
+    
+      <div class="navbar-area">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="../../index.php">
+                  <img src="../../assets/img/logo/lg.webp" style="width:80%" alt="Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                  <ul id="nav" class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="page-scroll" href="../controllers/redirect.php">Home</a>
+                    </li>
+              
+                    <li class="nav-item">
+                        <a href="../controllers/logout.php">logout</a>
+                    </li>
+                    
+                  </ul>
+                </div>
+                
+                <!-- navbar collapse -->
+              </nav>
+              <!-- navbar -->
+            </div>
+          </div>
+          <!-- row -->
+        </div>
+        <!-- container -->
+      </div>
+      <!-- navbar area -->
+      
+    </header>
 <body>
+	<section class="pick">
 	<div class="container">
-		<h1>My Form</h1>
+		<h1>Add a row (logistics)</h1>
 		<form action="../controllers/logisticsAdder.php" method="POST">
 			<label for="od">Outbound delivery:</label>
 			<input type="text" id="od" name="od">
@@ -85,7 +157,7 @@
 			<input type="text" id="supplier" name="supplier">
 
 			<label for="transporter">Transporter</label>
-			<input type="text" id="transporter" name="freight_invoice2">
+			<input type="text" id="transporter" name="transporter">
 
 			<label for="inspection">Inspection</label>
 			<input type="text" id="inspection" name="inspection">
@@ -100,8 +172,8 @@
             <label for="loading_date_at_plant">Loading date at plant</label>
             <input type="date" id="loading_date_at_plant" name="loading_date_at_plant">
 
-            <label for="quantity_removed_from_site">Quantity removed from the site</label>
-            <input type="number" id="quantity_removed_from_site" name="quantity_removed_from_site">
+            <label for="quantity_removed_from_the_site">Quantity removed from the site</label>
+            <input type="number" id="quantity_removed_from_the_site" name="quantity_removed_from_the_site">
 
             <label for="stuffing_date">Stuffing date:</label>
             <input type="date" id="stuffing_date" name="stuffing_date">
@@ -118,20 +190,11 @@
             <label for="transit_time">Transit Time:</label>
             <input type="number" id="transit_time" name="transit_time">
 
-			<label for="eta">>ETA(Estimated Time of Arrival):</label>
-            <input type="date" id="eta" name="eta">
-
+			
 			<label for="bldate">BL date estimated:</label>
             <input type="date" id="bldate" name="bldate">
 
-			<label for="blmonth">BL Month:</label>
-            <input type="text" id="blmonth" name="blmonth">
-
-			<label for="blquarter">BL Quarter:</label>
-            <input type="text" id="blquarter" name="blquarter">
-
-			<label for="blyear">BL Year:</label>
-            <input type="text" id="blyear" name="blyear">
+	
 
 			<label for="net_quantity">Net Quantity:</label>
             <input type="number" id="net_quantity" name="net_quantity">
@@ -189,11 +252,11 @@
 
 			<label for="jours_3">3 Jours:</label>
             <input type="number" id="jours_3" name="jours_3">
-
-			<label for="mois_facturation">Mois de facturation:</label>
-            <input type="date" id="mois_facturation" name="mois_facturation">
+*
 
       <input type="submit" value="Submit">
+	</div>
+	</section>
 
 <?php 
 include '../models/User.php';

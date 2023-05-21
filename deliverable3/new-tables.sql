@@ -1,13 +1,16 @@
 
 USE phosphateFeeds;
--- The desired isolation level for this transaction is READ COMMITTED.
--- This level ensures that each transaction sees only committed data and prevents dirty reads.
-SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
 
--- Drop the existing table if it exists
 DROP TABLE IF EXISTS temporary_full_table;
-
--- Create the temporary_full_table
+/*
+The "Read Committed" isolation level is the appropriate choice for our data management project.
+In fact, there are many users who update the table from different departments and in different timestamps.
+Thus, we need an isolation level which balances between data consistency and concurrency by allowing concurrent transactions to read 
+ committed data. This level prevents dirty reads, maintains data integrity, and provides granular privilege 
+ control. With "Read Committed," transactions operate independently, improving performance by avoiding excessive locking and enabling 
+ multiple users to read simultaneously. Overall, it meets perfectly our project's requirements.
+*/
+SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED;-- Create the temporary_full_table
 CREATE TABLE temporary_full_table (
 region VARCHAR(255),
 tdate DATE,
@@ -71,10 +74,8 @@ invoice REAL,
 payment_status VARCHAR(255)
 );
 
--- Drop the existing table if it exists
 DROP TABLE IF EXISTS user_credentials;
 
--- Create the user_credentials table
 CREATE TABLE user_credentials (
 userid INTEGER AUTO_INCREMENT PRIMARY KEY,
 username VARCHAR(255),
@@ -83,7 +84,6 @@ email VARCHAR(255),
 urole VARCHAR(255)
 );
 
--- Load data from CSV file into temporary_full_table
 LOAD DATA INFILE '/Applications/XAMPP/xamppfiles/htdocs/um6p-cs-introdb-project2-choukri/deliverable3/data.csv'
 INTO TABLE temporary_full_table
 FIELDS TERMINATED BY ','

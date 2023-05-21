@@ -75,7 +75,7 @@ $query = $conn->prepare("UPDATE temporary_full_table
     $query->execute([
         
     ]);
-    header("Location: /src/views/fulldatabaseview.php");
+    header("Location: ../views/fulldatabaseview.php");
 
 
 

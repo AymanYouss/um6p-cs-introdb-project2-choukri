@@ -1,9 +1,21 @@
+<?php
+	if(!isset($_SESSION))
+	{
+		session_start();
+	}
+
+
+  if (!isset($_SESSION) || $_SESSION["role"] != "adv") {
+    include_once '../controllers/redirect.php';
+  }
+?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Sales Dashboard</title>
+    <title>ADV Dashboard</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon.svg"/>
@@ -40,7 +52,7 @@
           <div class="row align-items-center">
             <div class="col-lg-12">
               <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="../../index.php">
                   <img src="../../assets/img/logo/lg.webp" style="width:80%" alt="Logo" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,6 +71,9 @@
                     </li>
                     <li class="nav-item">
                       <a class="page-scroll" href="#tracking" id="abt" onmouseover="showabt1()" onmouseout="showabt()">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../controllers/logout.php">logout</a>
                     </li>
                     
                   </ul>
@@ -88,14 +103,14 @@
           <div class="col-lg-6">
             <div class="hero-content">
               <h1 class="wow fadeInUp" data-wow-delay=".2s">
-								ADV Dashboard
+								<?php include_once '../controllers/username_getter.php'?>
 							</h1>
               <p class="wow fadeInUp" data-wow-delay=".4s">
-                Add, modify, delete rows and entries in the ADV(avis de chargement) table.
+                Add, modify, delete rows and entries in the ADV(Administrateurs De Vente) table.
               </p>
               <div class="hero-btns">
 								<a href="fulldatabaseview.php" class="main-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Database Overview</a>
-								<a href="#feature" class="main-btn border-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Edit an ADV(avis de chargement)</a>
+								<a href="#feature" class="main-btn border-btn btn-hover wow fadeInUp" data-wow-delay=".6s">Edit an ADV(Administrateurs De Vente)</a>
 							</div>
             </div>
 					</div>
@@ -118,7 +133,7 @@
 					<div class="col-xxl-5 col-xl-6 col-lg-7">
 						<div class="section-title text-center mb-30">
 							<h1 class="mb-25 wow fadeInUp" data-wow-delay=".2s">Choose Action</h1>
-							<p class="wow fadeInUp" data-wow-delay=".4s">You can either add & edit rows, and take a look at the ADV(avis de chargement) table</p>
+							<p class="wow fadeInUp" data-wow-delay=".4s">You can either add & edit rows, and take a look at the ADV(Administrateurs De Vente) table</p>
 						</div>
 					</div>
 				</div>
@@ -127,22 +142,22 @@
 					<div class="col-lg-4 col-md-8 col-sm-10">
 						<div class="single-feature">
 							<div class="icon color-1">
-								<a style="color:white" href="addrowsales.php" class="lhov"><i class="lni lni-pointer-up"></i></a> 
+								<a style="color:white" href="addRowADV.php" class="lhov"><i class="lni lni-pointer-up"></i></a> 
 							</div>
 							<div class="content">
 								<h3>Add a row</h3>
-								<p>You can conveniently fill in all the relevant information to enrich the ADV(avis de chargement) table with valuable data !</p>
+								<p>You can conveniently fill in all the relevant information to enrich the ADV(Administrateurs De Vente) table with valuable data !</p>
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-4 col-md-8 col-sm-10">
 						<div class="single-feature">
 							<div class="icon color-2">
-								<a style="color:white" href="editrowssales.php" class="lhov"><i class="lni lni-laptop-phone"></i></a> 
+								<a style="color:white" href="editrowADV.php" class="lhov"><i class="lni lni-laptop-phone"></i></a> 
 							</div>
 							<div class="content">
 								<h3>Edit a row</h3>
-								<p>You can update the ADV(avis de chargement) table with new information, enabling you to refine any existing row !</p>
+								<p>You can update the ADV(Administrateurs De Vente) table with new information, enabling you to refine any existing row !</p>
 							</div>
 						</div>
 					</div>

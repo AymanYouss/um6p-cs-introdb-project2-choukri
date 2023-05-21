@@ -33,21 +33,40 @@ class PhosphateQueries
 
 public function getYear($date)
 {
+    if (empty($date)){
+        return "";
+    }
 
     $datetime = DateTime::createFromFormat('Y-m-d', $date);
-    $a = $datetime->format('y');
+    $a = $datetime->format('Y');
 
     if ($a < 0){
         return 0;
     }
-    return $datetime->format('y');
+    return $datetime->format('Y');
+   
+}
+
+public function getMonth($date)
+{
+    if (empty($date)){
+        return "";
+    }
+
+    $datetime = DateTime::createFromFormat('Y-m-d', $date);
+    $a = $datetime->format('m');
+
+    if ($a < 0){
+        return 0;
+    }
+    return $datetime->format('m');
    
 }
 
 public function calculateNumberOfTc($total_volume,$volume_per_container)
 {
     try{
-        $res =  $total_volume / $volume_per_container;
+        $res =  (float)$total_volume / (float)$volume_per_container;
     }
     catch (DivisionByZeroError){
         return 0;
@@ -91,20 +110,16 @@ public function getPriceExw($price , $estimated_freight , $estimated_fob , $esti
 }
 }
 
-public function getBlMonth($bldate)
-{
-    $query = "SELECT MONTH($bldate) AS month FROM temporary_full_table";
-    $result = $this->connection->query($query);
 
-    if ($result && $result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $bl_month = $row['month'];
-        $result->free_result();
-        return $bl_month;
-    } else {
-        return null; 
+    public function getBlMonth($bldate)
+{
+    $month = date('F', strtotime($bldate));
+    return $month;
+      
+
 }
-}
+
+
 
 public function getBlQuarter($bldate)
 {
@@ -166,6 +181,9 @@ public function getPaymentDeadline($bldate, $payment_terms_days)
         
     }
     public function getEta($transit_time,$bldate){
+        if (empty($bldate)){
+            return "";
+        }
         $numer = (string) $transit_time;
         
         return date('Y-m-d', strtotime($bldate. ' + '.$numer.' days'));

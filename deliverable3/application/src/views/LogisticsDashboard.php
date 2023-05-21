@@ -1,3 +1,15 @@
+<?php
+	if(!isset($_SESSION))
+	{
+		session_start();
+	}
+
+
+  if (!isset($_SESSION) || $_SESSION["role"] != "logistics") {
+    include_once '../controllers/redirect.php';
+  }
+?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="">
   <head>
@@ -40,7 +52,7 @@
           <div class="row align-items-center">
             <div class="col-lg-12">
               <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="../../index.php">
                   <img src="../../assets/img/logo/lg.webp" style="width:80%" alt="Logo" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,6 +71,9 @@
                     </li>
                     <li class="nav-item">
                       <a class="page-scroll" href="#tracking" id="abt" onmouseover="showabt1()" onmouseout="showabt()">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../controllers/logout.php">logout</a>
                     </li>
                     
                   </ul>
@@ -88,7 +103,7 @@
           <div class="col-lg-6">
             <div class="hero-content">
               <h1 class="wow fadeInUp" data-wow-delay=".2s">
-								Logistics Dashboard
+              <?php include_once '../controllers/username_getter.php'?>
 							</h1>
               <p class="wow fadeInUp" data-wow-delay=".4s">
                 Add, modify, delete rows and entries in the logistics table.
@@ -138,7 +153,7 @@
 					<div class="col-lg-4 col-md-8 col-sm-10">
 						<div class="single-feature">
 							<div class="icon color-2">
-								<a style="color:white" href="editrowslogistics.php" class="lhov"><i class="lni lni-laptop-phone"></i></a> 
+								<a style="color:white" href="editrowlogistics.php" class="lhov"><i class="lni lni-laptop-phone"></i></a> 
 							</div>
 							<div class="content">
 								<h3>Edit a row</h3>
@@ -149,7 +164,7 @@
 					<div class="col-lg-4 col-md-8 col-sm-10">
 						<div class="single-feature">
 							<div class="icon color-3">
-              <a style="color:white" href="logisticssdatabaseview.php" class="lhov"><i class="lni lni-database"></i></a> 
+              <a style="color:white" href="logisticsdatabaseview.php" class="lhov"><i class="lni lni-database"></i></a> 
 							</div>
 							<div class="content">
 								<h3>Take a look</h3>

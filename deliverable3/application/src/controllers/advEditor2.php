@@ -10,14 +10,13 @@ $query = $conn->prepare("UPDATE temporary_full_table
         contract_id = '".$_POST["contract_id"]."',
         contract_status = '".$_POST["contract_status"]."',
         invoice = '".$_POST["invoice"]."',
-        invoiced_amount = '".$_POST["invoiced_amount"]."',
-        payment_deadline = '".$_POST["payment_deadline"]."',
+        
         payment_status = '".$_POST["payment_status"]."'WHERE od = '".$_POST["od"]."';");
 
     $query->execute([
         
     ]);
-    header("Location: /src/views/Advdatabaseview.php");
+    header("Location: ../views/Advdatabaseview.php");
 
 
 

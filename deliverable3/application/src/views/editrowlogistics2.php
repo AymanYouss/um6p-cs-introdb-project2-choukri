@@ -1,13 +1,22 @@
-<?php 
-            session_start();
-            
-    ?>
+<?php
+	if(!isset($_SESSION))
+	{
+		session_start();
+	}
+
+
+  if (!isset($_SESSION) || $_SESSION["role"] != "logistics") {
+    include_once '../controllers/redirect.php';
+  }
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>My Form</title>
+	<title>Edit Row (logistics)</title>
 	<style>
 		body {
 			font-family: Arial, sans-serif;
@@ -22,6 +31,13 @@
 			border-radius: 5px;
 			box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 		}
+
+    .pick{
+            position: relative;
+            z-index: 1;
+            padding: 15% 0 50px;
+            
+        }
 
 		h1 {
 			font-size: 24px;
@@ -77,14 +93,71 @@
 			}
 		}
 	</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../assets/css/tables.css">
+  <link rel="shortcut icon" type="image/x-icon" href="../../assets/img/favicon.svg"/>
+    <link rel="stylesheet" href="../../assets/css/bootstrap-5.0.0-alpha-2.min.css" />
+    <link rel="stylesheet" href="../../assets/css/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="../../assets/css/animate.css" />
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <?php include 'head.html' ?>
 </head>
+<header class="header">
+  
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- ========================= CSS here ========================= -->
+    
+      <div class="navbar-area">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="../../index.php">
+                  <img src="../../assets/img/logo/lg.webp" style="width:80%" alt="Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                  <ul id="nav" class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="page-scroll" href="../controllers/redirect.php">Home</a>
+                    </li>
+              
+                    <li class="nav-item">
+                        <a href="../controllers/logout.php">logout</a>
+                    </li>
+                    
+                  </ul>
+                </div>
+                
+                <!-- navbar collapse -->
+              </nav>
+              <!-- navbar -->
+            </div>
+          </div>
+          <!-- row -->
+        </div>
+        <!-- container -->
+      </div>
+      <!-- navbar area -->
+      
+    </header>
 <body>
+<section class="pick">
 	<div class="container">
-		<h1>My Form</h1>
+		<h1>Edit a row (logistics)</h1>
 		<form action="../controllers/logisticsEditor2.php" method="POST">
+        <label for="od">Outbound Delivery:</label>
+        <input type="text" id="od" name="od" value="<?php echo $_SESSION["fetch_logistics"][0]["od"]; ?>">
 
             <label for="supplier">Supplier</label>
             <?php 
+
             echo "<input type='text' id='supplier' name='supplier' value='".$_SESSION["fetch_logistics"][0]["supplier"]."'>";
             ?>
             <label for="transporter">Transporter</label>
@@ -103,13 +176,17 @@
             <?php 
             echo "<input type='text' id='shipped_via' name='shipped_via' value='".$_SESSION["fetch_logistics"][0]["shipped_via"]."'>";
             ?>
+
+            <label for="clearance_date">Clearance date:</label>
+            <input type="date" id="clearance_date" name="clearance_date" value="<?php echo $_SESSION["fetch_logistics"][0]["clearance_date"]; ?>">
+            
             <label for="loading_date_at_plant">Loading date at plant:</label>
             <?php 
             echo "<input type='date' id='loading_date_at_plant' name='loading_date_at_plant' value='".$_SESSION["fetch_logistics"][0]["loading_date_at_plant"]."'>";
             ?>
-            <label for="quantity_removed_from_site">Quantity removed from the site:</label>
+            <label for="quantity_removed_from_the_site">Quantity removed from the site:</label>
             <?php 
-            echo "<input type='number' id='quantity_removed_from_site' name='quantity_removed_from_site' value='".$_SESSION["fetch_logistics"][0]["quantity_removed_from_site"]."'>";
+            echo "<input type='number' id='quantity_removed_from_the_site' name='quantity_removed_from_the_site' value='".$_SESSION["fetch_logistics"][0]["quantity_removed_from_the_site"]."'>";
             ?>
             <label for="stuffing_date">Stuffing date:</label>
             <?php 
@@ -131,26 +208,12 @@
             <?php 
             echo "<input type='numebr' id='transit_time' name='transit_time' value='".$_SESSION["fetch_logistics"][0]["transit_time"]."'>";
             ?>
-            <label for="eta">ETA(Estimated Time of Arrival)::</label>
-            <?php 
-            echo "<input type='date' id='eta' name='stuffingeta_date' value='".$_SESSION["fetch_logistics"][0]["eta"]."'>";
-            ?>
+            
             <label for="bldate">BL date estimated::</label>
             <?php 
             echo "<input type='date' id='bldate' name='bldate' value='".$_SESSION["fetch_logistics"][0]["bldate"]."'>";
             ?>
-            <label for="blmonth">BL Month:</label>
-            <?php 
-            echo "<input type='text' id='blmonth' name='blmonth' value='".$_SESSION["fetch_logistics"][0]["blmonth"]."'>";
-            ?>
-            <label for="blquarter">BL Quarter:</label>
-            <?php 
-            echo "<input type='text' id='blquarter' name='blquarter' value='".$_SESSION["fetch_logistics"][0]["blquarter"]."'>";
-            ?>
-            <label for="blyear">BL Year:</label>
-            <?php 
-            echo "<input type='text' id='blyear' name='blyear' value='".$_SESSION["fetch_logistics"][0]["blyear"]."'>";
-            ?>
+            
             <label for="net_quantity">Net Quantity:</label>
             <?php 
             echo "<input type='number' id='net_quantity' name='net_quantity' value='".$_SESSION["fetch_logistics"][0]["net_quantity"]."'>";
@@ -205,25 +268,22 @@
             ?>
             <label for="jours_half">1/2 Jours:</label>
             <?php
-            echo "<input type='text' id='jours_half' name='jours_half' value='".$_SESSION["fetch_sales"][0]["jours_half"]."'>";
+            echo "<input type='text' id='jours_half' name='jours_half' value='".$_SESSION["fetch_logistics"][0]["jours_half"]."'>";
             ?>
             <label for="jours_1">1 Jours:</label>
             <?php
-            echo "<input type='text' id='jours_1' name='jours_1' value='".$_SESSION["fetch_sales"][0]["jours_1"]."'>";
+            echo "<input type='text' id='jours_1' name='jours_1' value='".$_SESSION["fetch_logistics"][0]["jours_1"]."'>";
             ?>            
             <label for="jours_2">2 Jours:</label>
             <?php
-            echo "<input type='text' id='jours_2' name='jours_2' value='".$_SESSION["fetch_sales"][0]["jours_2"]."'>";
+            echo "<input type='text' id='jours_2' name='jours_2' value='".$_SESSION["fetch_logistics"][0]["jours_2"]."'>";
             ?>
             <label for="jours_half">3 Jours:</label>
             <?php
-            echo "<input type='text' id='jours_3' name='jours_3' value='".$_SESSION["fetch_sales"][0]["jours_3"]."'>";
+            echo "<input type='text' id='jours_3' name='jours_3' value='".$_SESSION["fetch_logistics"][0]["jours_3"]."'>";
             ?>
             
-            <label for="mois_facturation">Mois de facturation:</label>
-            <?php
-            echo "<input type='date' id='mois_facturation' name='mois_facturation' value='".$_SESSION["fetch_sales"][0]["mois_facturation"]."'>";
-            ?>
+            
 
 
 
@@ -232,3 +292,9 @@
 <?php 
 include '../models/User.php';
 ?>
+
+
+</div>
+	</section>
+	</body>
+</html>

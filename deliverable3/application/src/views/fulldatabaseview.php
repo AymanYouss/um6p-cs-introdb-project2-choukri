@@ -1,9 +1,16 @@
 <?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+	if(!isset($_SESSION))
+	{
+		session_start();
+	}
+
+
+  if (!isset($_SESSION["role"])) {
+    include_once '../controllers/redirect.php';
+  }
 ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +22,7 @@
     <link rel="stylesheet" href="../../assets/css/LineIcons.2.0.css" />
     <link rel="stylesheet" href="../../assets/css/animate.css" />
     <link rel="stylesheet" href="../../assets/css/main.css" />
+    <?php include 'head.html' ?>
 </head>
 <header class="header">
   
@@ -27,7 +35,7 @@
           <div class="row align-items-center">
             <div class="col-lg-12">
               <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="../../index.php">
                   <img src="../../assets/img/logo/lg.webp" style="width:80%" alt="Logo" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,13 +47,11 @@
                 <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                   <ul id="nav" class="navbar-nav ml-auto">
                     <li class="nav-item">
-                      <a class="page-scroll" href="#home">Home</a>
+                      <a class="page-scroll" href="../controllers/redirect.php">Home</a>
                     </li>
+              
                     <li class="nav-item">
-                      <a class="page-scroll" href="#feature">Actions</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="page-scroll" href="#tracking" id="abt" onmouseover="showabt1()" onmouseout="showabt()">About us</a>
+                        <a href="../controllers/logout.php">logout</a>
                     </li>
                     
                   </ul>
@@ -108,19 +114,18 @@
       echo "<tr>";
       $counter = 0;
       $arr =  array();
-      //print_r($row);
-      foreach($row as $entry){
-        if ($counter%2 == 0 && $counter != 58){
+      foreach($row as $k => $entry){
+        if (!is_numeric($k) & $k != "payment_status"){
           echo "<td>$entry</td>";
           
         }
         $counter++;
       }
       
-      if (strstr($row['payment_status'],"Paid") && !(strstr($row['payment_status'],"Not")))
-        echo '<td ><p class="status paid">'.$row['payment_status'].'</p></td>';
+      if (strstr($row['payment_status'],"Paid") && !(strstr($row['payment_status'],"Not Paid")))
+        echo '<td ><p class="status paid">Paid</p></td>';
       else{
-        echo '<td ><p class="status notpaid">'.$row['payment_status'].'</p></td>';
+        echo '<td ><p class="status notpaid">Not Paid</p></td>';
 
       }
       echo "<tr>";
