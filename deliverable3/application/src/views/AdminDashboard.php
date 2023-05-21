@@ -95,7 +95,16 @@
 
     <!-- ========================= hero-section start ========================= -->
     <section id="home" class="hero-section">
-    <div class="hide" id="hide">I am shown when someone hovers over the div above.</div>
+    <div class="hide" id="hide">
+      <p>Our team:</p>
+      <br>
+      <p>Ayman Youss - https://github.com/AymanYouss</p>
+      <p>Zakaria Choukri - https://github.com/zakariaCHOUKRI</p>
+      <p>Maha Hanif - https://github.com/mahatun</p>
+      <p>Hajar Belmoudden - https://github.com/hajarbel04</p>
+      <br>
+      <p>We are four 2nd year computer science students at UM6P</p>
+    </div>
       <div class="container">
       
         <div class="row align-items-center">
