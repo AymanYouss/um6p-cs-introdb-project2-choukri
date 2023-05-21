@@ -142,9 +142,9 @@
             <div class="input-group">
                 <input type="search" id="search" placeholder="Search Data by OD...">
                 
-                <a href="../controllers/export.php">Export to csv</a>
+                
             </div>
-          
+            <a href="../controllers/export.php">Export to csv</a>
         </section>
         <section class="table__body">
             <table id="table">
