@@ -346,7 +346,7 @@
         
    
 </script>
-<script src="/application/assets/js/search.js">
+<script src="../../assets/js/search.js">
 </script>
 
  
