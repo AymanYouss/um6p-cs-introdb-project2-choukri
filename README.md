@@ -4,9 +4,8 @@
 
 ## Overview
 
-Welcome to the Readme file for the Feed Phosphates Sales Data Management System, a web-based solution designed to improve the workflow of the Business Unit at OCP in Casablanca City. This system is specifically developed to address the inefficiencies and challenges associated with managing sales data for feed phosphates. The current process relies on an error-prone Excel file, which has proven to be cumbersome, time-consuming, and prone to errors.
+The Feed Phosphates Sales Data Management System is a web-based solution designed to improve the workflow of the Business Unit at OCP in Casablanca City. This system is specifically developed to address the inefficiencies and challenges associated with managing sales data for feed phosphates. The current process relies on an error-prone Excel file, which has proven to be cumbersome, time-consuming, and prone to errors.
 
-This document will provide an overview of the project, its objectives, key features, and how to use the system effectively.
 
 ## Problem Statement
 
@@ -53,9 +52,7 @@ The Feed Phosphates Sales Data Management System offers the following key featur
 
 - Entry forms adapt to the status of each transaction, minimizing data entry errors and ensuring that users only provide necessary information.
 
-### Notifications and Alerts
 
-- Users receive notifications and alerts for important updates or pending actions, improving communication and responsiveness.
 
 ## Getting Started
 
@@ -71,12 +68,6 @@ To start using the Feed Phosphates Sales Data Management System, follow these st
 
 5. **Data Retrieval and Visualization**: Use the system's built-in tools to retrieve data, generate reports, and visualize information for better decision-making.
 
-6. **Notifications**: Stay informed with real-time notifications and alerts related to your department's activities.
 
-## Conclusion
-
-The Feed Phosphates Sales Data Management System aims to significantly improve the workflow of the Business Unit at OCP in Casablanca City. By centralizing data, implementing role-based permissions, and offering data visualization tools, we aim to enhance efficiency, reduce errors, and boost productivity across all departments.
 
 For any questions, feedback, or technical support, please contact me at : ayman.youss@um6p.ma .
-
-Thank you for choosing our system to streamline your sales data management processes. We look forward to serving your needs and helping your team succeed.
